@@ -1,0 +1,1 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://services.charging.neo/"><soapenv:Header/><soapenv:Body><ser:confirmOtpAndPay><isdn>09876543111</isdn><session>abc123</session><otp>11322</otp></ser:confirmOtpAndPay></soapenv:Body></soapenv:Envelope>
