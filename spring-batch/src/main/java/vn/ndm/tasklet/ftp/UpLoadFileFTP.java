@@ -7,6 +7,7 @@ import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import vn.ndm.utils.FolderUtils;
 
 @Component
 public class UpLoadFileFTP implements Tasklet {
@@ -20,15 +21,16 @@ public class UpLoadFileFTP implements Tasklet {
     }
 
     public void upLoadFileFTP() {
-        String pathLocal = "D:/example/jobs/spring-batch/excel/dcm_track_20230116163802.xlsx";
-        String pathServer = "/app/data_test";
-        try {
-            ChannelSftp sftp = connectFTP.getConnect();
-            sftp.put(pathLocal, pathServer);
-            sftp.getExitStatus();
-            sftp.disconnect();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        String pathLocal = FolderUtils.getFilePathToSave().getProperty("path-local");
+        String pathServer = FolderUtils.getFilePathToSave().getProperty("path-server");
+
+//        try {
+//            ChannelSftp sftp = connectFTP.getConnect();
+//            sftp.put(pathLocal, pathServer);
+//            sftp.getExitStatus();
+//            sftp.disconnect();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }

@@ -30,6 +30,7 @@ public class ScheduleJob {
         log.info("Job Started at :" + new Date());
         JobParameters param = new JobParametersBuilder().addString(job.getName(), String.valueOf(System.currentTimeMillis()))
                 .toJobParameters();
+
         JobExecution execution = jobLauncher.run(job, param);
         log.info("Job finished with status :" + execution.getStatus());
     }
