@@ -5,8 +5,11 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.*;
+import java.util.stream.Stream;
 
 @Slf4j
 public class FolderUtils {
@@ -22,16 +25,17 @@ public class FolderUtils {
     }
 
     //get list file folder
-    public List<String> readFolder(String path) {
+    public static List<String> readFolder(String path) {
         ArrayList<String> list = new ArrayList<>();
         try {
-            File[] lf = new File(path).listFiles();
+            File folder = new File(path);
+            File[] lf = folder.listFiles();
             if (lf == null || lf.length == 0) {
                 return list;
             } else {
                 for (File f : lf) {
                     if (f.isDirectory()) {
-                        continue;
+                        readFolder(f.getPath());
                     }
                     list.add(f.getPath());
                 }
@@ -40,6 +44,18 @@ public class FolderUtils {
             e.printStackTrace();
         }
         return list;
+    }
+
+    // get file java 8
+    public static List<String> getAllFiles(String directory) {
+        List<String> fileList = new ArrayList<>();
+        try (Stream<Path> paths = Files.walk(Paths.get(directory))) {
+            paths.filter(Files::isRegularFile)
+                    .forEach(file -> fileList.add(file.getFileName().toString()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fileList;
     }
 
     // get k-v file properties
@@ -91,6 +107,13 @@ public class FolderUtils {
         } catch (Exception e) {
             e.printStackTrace();
             log.info("Folder create error!");
+        }
+    }
+
+    public static void main(String[] args) {
+        String path = "C:/Users/admin/Desktop/1090-901";
+        for (String a : getAllFiles(path)) {
+            System.out.println(a);
         }
     }
 }
