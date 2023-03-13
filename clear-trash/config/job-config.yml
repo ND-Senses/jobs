@@ -1,0 +1,15 @@
+jobs:
+  - name: DELETE
+    paths:
+      - C:/Users/admin/AppData/Local/Temp
+      - C:/Windows/Prefetch
+      - C:/Windows/Temp
+      - C:/Windows/Prefetch
+      - C:/Users/admin/AppData/Local/Temp
+      - C:/Windows/SoftwareDistribution/Download
+  - name: SPLITER
+    paths:
+      - C:/Users/admin/Desktop/data
+#  - name: DUPLICATE
+#    paths:
+#      - C:/Users/admin/Desktop/img,jpg
