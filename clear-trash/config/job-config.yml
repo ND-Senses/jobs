@@ -10,6 +10,6 @@ jobs:
   - name: SPLITER
     paths:
       - C:/Users/admin/Desktop/data
-#  - name: DUPLICATE
-#    paths:
-#      - C:/Users/admin/Desktop/img,jpg
+  - name: DUPLICATE
+    paths:
+      - C:/Users/admin/Desktop/img,jpg

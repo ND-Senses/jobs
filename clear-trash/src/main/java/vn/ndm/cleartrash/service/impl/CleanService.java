@@ -9,9 +9,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Slf4j
 @Service
@@ -20,14 +17,17 @@ public class CleanService implements JobHandler {
     public void deleteRecursive(File path) {
         log.info("Cleaning out folder: {}", path.toString());
         try {
-            for (File file : Objects.requireNonNull(path.listFiles())) {
-                if (file.isDirectory()) {
-                    deleteRecursive(file);
-                    Path p = Paths.get(file.getPath());
-                    log.info("Delete folder {} status: {}", p, Files.deleteIfExists(p));
-                } else {
-                    Path p = Paths.get(file.getPath());
-                    log.info("Delete file {} status: {}", p, Files.deleteIfExists(p));
+            File[] files = path.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    if (file.isDirectory()) {
+                        deleteRecursive(file);
+                        Path p = Paths.get(file.getPath());
+                        log.info("Delete folder {} status: {}", p, Files.deleteIfExists(p));
+                    } else {
+                        Path p = Paths.get(file.getPath());
+                        log.info("Delete file {} status: {}", p, Files.deleteIfExists(p));
+                    }
                 }
             }
         } catch (Exception e) {
