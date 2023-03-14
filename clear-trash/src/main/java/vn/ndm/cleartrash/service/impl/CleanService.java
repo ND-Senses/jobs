@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 @Slf4j
 @Service
 public class CleanService implements JobHandler {
+
     public void deleteRecursive(File path) {
         log.info("Cleaning out folder: {}", path.toString());
         try {
@@ -33,38 +34,6 @@ public class CleanService implements JobHandler {
             log.info("#Error delete file: {}", e.getMessage());
         }
     }
-
-
-
-
-    public void renameFileExtension(String source, String newExtension) {
-        String target;
-        File file1 = new File(source);
-        File[] files = file1.listFiles();
-        assert files != null;
-        log.info("size data {}", files.length);
-        for (File file : Objects.requireNonNull(files)) {
-            String currentExtension = getFileExtension(file.getAbsolutePath());
-            if (currentExtension.contains("jfif")) {
-                log.info("file: {}", file.getAbsoluteFile());
-                target = file.getAbsolutePath().replaceFirst(Pattern.quote("." + currentExtension) + "$", Matcher.quoteReplacement("." + newExtension));
-                boolean checkExits = new File(file.getAbsolutePath()).renameTo(new File(target));
-                if (checkExits) {
-                    log.info("Succsess: {}", target);
-                }
-            }
-        }
-    }
-
-    public String getFileExtension(String f) {
-        String ext = "";
-        int i = f.lastIndexOf('.');
-        if (i > 0 && i < f.length() - 1) {
-            ext = f.substring(i + 1);
-        }
-        return ext;
-    }
-
 
     @Override
     public void execute(List<String> value) {
