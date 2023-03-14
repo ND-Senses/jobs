@@ -1,13 +1,13 @@
-package vn.ndm.cleartrash.service;
+package vn.ndm.cleartrash.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import vn.ndm.cleartrash.itf.JobHandler;
 
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -15,16 +15,7 @@ import java.util.regex.Pattern;
 
 @Slf4j
 @Service
-public class CleanService {
-
-    public void getInfoFIle(String path) {
-        List<String> strings = getAllPath(path);
-        for (String pathFile : strings) {
-            File file = new File(pathFile);
-            log.info("File name {} size {}", file.getName(), file.length());
-        }
-    }
-
+public class CleanService implements JobHandler {
     public void deleteRecursive(File path) {
         log.info("Cleaning out folder: {}", path.toString());
         try {
@@ -43,26 +34,7 @@ public class CleanService {
         }
     }
 
-    //get list file folder
-    public List<String> getAllPath(String path) {
-        ArrayList<String> list = new ArrayList<>();
-        try {
-            File f = new File(path);
-            for (File file : Objects.requireNonNull(f.listFiles())) {
-                if (file.isDirectory()) {
-                    log.info("get folder: {}", file.getAbsolutePath());
-                    list.add(file.getAbsolutePath());
-                    getAllPath(file.getAbsolutePath());
-                } else {
-                    log.info("get name: {}", file.getName());
-                    list.add(file.getAbsolutePath());
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
+
 
 
     public void renameFileExtension(String source, String newExtension) {
@@ -94,4 +66,10 @@ public class CleanService {
     }
 
 
+    @Override
+    public void execute(List<String> value) {
+        for (String v : value) {
+            deleteRecursive(new File(v));
+        }
+    }
 }

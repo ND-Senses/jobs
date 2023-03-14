@@ -1,7 +1,8 @@
-package vn.ndm.cleartrash.service;
+package vn.ndm.cleartrash.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import vn.ndm.cleartrash.itf.JobHandler;
 
 import java.io.*;
 import java.math.BigInteger;
@@ -17,16 +18,9 @@ import java.util.Objects;
 
 @Slf4j
 @Service
-public class DuplicateService {
-    /**
-     * check duplicate:
-     * enCode
-     * used FileInputStream read()
-     *
-     * @param path
-     * @throws IOException
-     */
-    public void duplicateFile(String path) throws IOException {
+public class DuplicateService implements JobHandler {
+
+    public void duplicateFile(String path) {
         File dir = new File(path);
         File[] fileList = dir.listFiles();
         if (fileList != null) {
@@ -34,7 +28,11 @@ public class DuplicateService {
                 for (int y = x + 1; y < fileList.length; y++) {
                     if (fileList[x].length() == fileList[y].length() && compareFiles(fileList[x], fileList[y])) {
                         Path p = Paths.get(String.valueOf(fileList[x]));
-                        Files.deleteIfExists(p);
+                        try {
+                            Files.deleteIfExists(p);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
@@ -93,5 +91,11 @@ public class DuplicateService {
                 }
             }
         }
+    }
+
+    @Override
+    public void execute(List<String> value) {
+        for (String v : value)
+            duplicateFile(v);
     }
 }

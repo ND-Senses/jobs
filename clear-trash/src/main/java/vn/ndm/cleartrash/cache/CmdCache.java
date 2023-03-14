@@ -1,7 +1,7 @@
 package vn.ndm.cleartrash.cache;
 
 import org.springframework.stereotype.Component;
-import vn.ndm.cleartrash.service.FileUltil;
+import vn.ndm.cleartrash.util.FileUltil;
 
 import java.util.List;
 import java.util.Map;

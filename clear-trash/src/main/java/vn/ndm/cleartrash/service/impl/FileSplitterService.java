@@ -1,14 +1,16 @@
-package vn.ndm.cleartrash.service;
+package vn.ndm.cleartrash.service.impl;
 
 import com.ibm.icu.text.Normalizer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import vn.ndm.cleartrash.itf.JobHandler;
 
 import java.io.*;
+import java.util.List;
 
 @Slf4j
 @Service
-public class FileSplitterService {
+public class FileSplitterService implements JobHandler {
 
     public void searchFiles(String directory) {
         File folder = new File(directory);
@@ -20,13 +22,12 @@ public class FileSplitterService {
                 if (file.isDirectory()) {
                     searchFiles(file.getPath());
                 } else {
-                    log.info("Parent: {}", file.getParent());
                     // Xử lý file tại đây
                     String filePath = file.getPath();
-//                    delFile(file);
                     writeFile(filePath);
                 }
             }
+            log.info("Split file success!");
         }
     }
 
@@ -55,7 +56,6 @@ public class FileSplitterService {
                     writerWithoutDiacritics.println(line);
                 }
             }
-            log.info("Split file: {} success!", new File(path).getName());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,5 +64,12 @@ public class FileSplitterService {
     public static boolean hasDiacritics(char s) {
         String normalized = Normalizer.normalize(s, Normalizer.NFC);
         return normalized.matches(".*[àáảãạâầấẩẫậăằắẳẵặèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ].*");
+    }
+
+    @Override
+    public void execute(List<String> value) {
+        for (String v : value) {
+            searchFiles(v);
+        }
     }
 }

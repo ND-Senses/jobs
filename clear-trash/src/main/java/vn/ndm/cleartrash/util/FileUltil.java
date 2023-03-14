@@ -1,4 +1,4 @@
-package vn.ndm.cleartrash.service;
+package vn.ndm.cleartrash.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.yaml.snakeyaml.Yaml;
@@ -13,13 +13,10 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class FileUltil {
-    public static void main(String[] args) {
-        System.out.println(readYamlFile("config/job-config.yml"));
-    }
-
     public static ConcurrentMap<String, List<String>> readYamlFile(String filePath) {
         ConcurrentMap<String, List<String>> jobs = new ConcurrentHashMap<>();
         try (InputStream inputStream = new FileInputStream(filePath)) {
@@ -29,7 +26,13 @@ public class FileUltil {
             for (Map<String, Object> jobMap : jobsList) {
                 String name = (String) jobMap.get("name");
                 Object paths = jobMap.get("paths");
-                jobs.put(name, (List<String>) paths);
+                // ép kiểu list
+                List<?> someList = (List<?>) paths;
+                List<String> myList = someList.stream()
+                        .map(Object::toString)
+                        .collect(Collectors.toList());
+                jobs.put(name, myList);
+
             }
         } catch (Exception e) {
             e.printStackTrace();

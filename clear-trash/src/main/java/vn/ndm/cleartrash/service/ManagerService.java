@@ -5,24 +5,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import vn.ndm.cleartrash.cache.CmdCache;
 
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 
 @Slf4j
 @Service
 public class ManagerService {
-    @Autowired
-    DuplicateService duplicateService;
-    @Autowired
-    FileSplitterService fileSplitterService;
-    @Autowired
-    CleanService cleanService;
+    final DetectiveService service;
+    final CmdCache cache;
+    final Map<String, List<String>> cmdCache;
 
     @Autowired
-    @Qualifier("cache")
-    Map<String, List<String>> cmdCache;
+    public ManagerService(DetectiveService service, CmdCache cache, @Qualifier("cache") Map<String, List<String>> cmdCache) {
+        this.service = service;
+        this.cache = cache;
+        this.cmdCache = cmdCache;
+    }
 
     @Scheduled(cron = "0 * * ? * *")
     public void selectCmd() {
@@ -32,30 +32,16 @@ public class ManagerService {
                 String key = entry.getKey();
                 List<String> value = entry.getValue();
                 log.info("Key: {} Value: {}", key, value);
-                if (key.contains("DELETE")) {
-                    for (String v : value)
-                        cleanService.deleteRecursive(new File(v));
-                } else if (key.contains("INFO")) {
-                    for (String v : value)
-                        cleanService.getInfoFIle(v);
-                } else if (key.contains("DUPLICATE")) {
-                    for (String v : value)
-                        duplicateService.duplicateFile(v);
-                } else if (key.contains("CHF")) {
-                    for (String v : value) {
-                        String[] string = v.split(",");
-                        cleanService.renameFileExtension(string[0], string[1]);
-                    }
-                } else if (key.contains("SPLITER")) {
-                    for (String v : value)
-                        fileSplitterService.searchFiles(v);
-                } else {
-                    log.info("Eó có gì .... lêu lêu");
-                    return;
-                }
+                service.executeJob(key, value);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Scheduled(fixedRate = 30000)
+    public void reloadJobConfigs() {
+        Map<String, List<String>> listMap = cache.load();
+        log.info("Size map: {}", listMap.size());
     }
 }
