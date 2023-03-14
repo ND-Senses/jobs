@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vn.ndm.cleartrash.itf.JobHandler;
 import vn.ndm.cleartrash.service.impl.CleanService;
+import vn.ndm.cleartrash.service.impl.CleanWithNameService;
 import vn.ndm.cleartrash.service.impl.DuplicateService;
 import vn.ndm.cleartrash.service.impl.FileSplitterService;
 
@@ -19,13 +20,15 @@ public class DetectiveService {
     final DuplicateService duplicateService;
     final FileSplitterService fileSplitterService;
     final CleanService cleanService;
+    final CleanWithNameService cleanWithNameService;
     private final Map<String, JobHandler> jobHandlers = new HashMap<>();
 
     @Autowired
-    public DetectiveService(DuplicateService duplicateService, FileSplitterService fileSplitterService, CleanService cleanService) {
+    public DetectiveService(DuplicateService duplicateService, FileSplitterService fileSplitterService, CleanService cleanService, CleanWithNameService cleanWithNameService) {
         this.duplicateService = duplicateService;
         this.fileSplitterService = fileSplitterService;
         this.cleanService = cleanService;
+        this.cleanWithNameService = cleanWithNameService;
     }
 
     @PostConstruct
@@ -34,6 +37,7 @@ public class DetectiveService {
         jobHandlers.put("DELETE", cleanService);
         jobHandlers.put("DUPLICATE", duplicateService);
         jobHandlers.put("SPLITER", fileSplitterService);
+        jobHandlers.put("CLSC", cleanWithNameService);
         // Add more job handlers here...
     }
 

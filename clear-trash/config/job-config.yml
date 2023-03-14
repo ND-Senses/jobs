@@ -1,15 +1,18 @@
 jobs:
-  - name: DELETE
+#  - name: DELETE
+#    paths:
+#      - C:/Users/admin/AppData/Local/Temp
+#      - C:/Windows/Prefetch
+#      - C:/Windows/Temp
+#      - C:/Windows/Prefetch
+#      - C:/Users/admin/AppData/Local/Temp
+#      - C:/Windows/SoftwareDistribution/Download
+#  - name: SPLITER
+#    paths:
+#      - C:/Users/admin/Desktop/data
+#  - name: DUPLICATE
+#    paths:
+#      - C:/Users/admin/Desktop/img,jpg
+  - name: CLSC
     paths:
-      - C:/Users/admin/AppData/Local/Temp
-      - C:/Windows/Prefetch
-      - C:/Windows/Temp
-      - C:/Windows/Prefetch
-      - C:/Users/admin/AppData/Local/Temp
-      - C:/Windows/SoftwareDistribution/Download
-  - name: SPLITER
-    paths:
-      - C:/Users/admin/Desktop/data
-  - name: DUPLICATE
-    paths:
-      - C:/Users/admin/Desktop/img,jpg
+      - C:/Users/admin/Desktop/data,.*_vn.txt
