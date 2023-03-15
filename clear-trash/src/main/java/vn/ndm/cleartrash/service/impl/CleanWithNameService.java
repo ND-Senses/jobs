@@ -21,8 +21,7 @@ public class CleanWithNameService implements JobHandler {
             File[] files = folder.listFiles();
             if (files != null) {
                 for (File file : files) {
-                    log.info("========= {}", file.getName());
-                    // Nếu file là thư mục, gọi lại hàm searchFiles đệ quy vào thư mục đó
+                    // Nếu file là thư mục, gọi lại hàm delWithCondition đệ quy vào thư mục đó
                     if (file.isDirectory()) {
                         delWithCondition(file.getPath(), regex);
                     } else {
