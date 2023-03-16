@@ -12,13 +12,13 @@ import java.util.Map;
 
 @Slf4j
 @Service
-public class ManagerService {
+public class ScheduleJobService {
     final DetectiveService service;
     final CmdCache cache;
     final Map<String, List<String>> cmdCache;
 
     @Autowired
-    public ManagerService(DetectiveService service, CmdCache cache, @Qualifier("cache") Map<String, List<String>> cmdCache) {
+    public ScheduleJobService(DetectiveService service, CmdCache cache, @Qualifier("cache") Map<String, List<String>> cmdCache) {
         this.service = service;
         this.cache = cache;
         this.cmdCache = cmdCache;
