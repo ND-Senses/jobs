@@ -1,6 +1,7 @@
 package vn.ndm.tasklet.ftp;
 
 import com.jcraft.jsch.ChannelSftp;
+import com.jcraft.jsch.SftpException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.scope.context.ChunkContext;
@@ -17,10 +18,13 @@ import java.util.List;
 @Slf4j
 @Component
 public class DownloadFileFTP implements Tasklet {
-    @Autowired
-    ConnectFTP connectFTP;
+    private final ConnectFTP connectFTP;
     private final List<String> listCache = new ArrayList<>();
-    private final String delimeter = "/";
+
+    @Autowired
+    public DownloadFileFTP(ConnectFTP connectFTP) {
+        this.connectFTP = connectFTP;
+    }
 
     @Override
     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) {
@@ -36,19 +40,11 @@ public class DownloadFileFTP implements Tasklet {
             FolderUtils.checkExists(new File(pathLocal));
             ChannelSftp sftp = connectFTP.getConnect();
             sftp.cd(pathServer);
-            List<ChannelSftp.LsEntry> listUpdate = sftp.ls(pathServer);
-            syncStore(listUpdate);
-            if (listCache.isEmpty()) {
-                for (ChannelSftp.LsEntry file : listUpdate) {
-                    if (!file.getFilename().equals(".") && !file.getFilename().equals("..")) {
-                        String pathFullServer = pathServer + delimeter + file.getFilename();
-                        sftp.get(pathFullServer, pathLocal);
-                    }
-                }
-            } else {
-                for (String file : listCache) {
-                    String pathFullServer = pathServer + delimeter + file;
-                    sftp.get(pathFullServer, pathLocal);
+            // đồng bộ file nếu trên server đã có
+            syncStore(sftp, pathServer);
+            if (!listCache.isEmpty()) {
+                for (String pathFile : listCache) {
+                    sftp.get(pathFile, pathLocal);
                 }
             }
             sftp.disconnect();
@@ -57,7 +53,28 @@ public class DownloadFileFTP implements Tasklet {
         }
     }
 
-    public void syncStore(List<ChannelSftp.LsEntry> listUpdate) {
+    // đệ quy all file từ server
+    public List<String> listFilesOnServer(ChannelSftp sftp, String path) throws SftpException {
+        String delimiter = "/";
+        List<String> fileList = new ArrayList<>();
+        List<ChannelSftp.LsEntry> list = sftp.ls(path);
+        for (ChannelSftp.LsEntry entry : list) {
+            String fileName = entry.getFilename();
+            if (entry.getAttrs().isDir()) {
+                if (!fileName.equals(".") && !fileName.equals("..")) {
+                    String subPath = path + delimiter + fileName;
+                    fileList.addAll(listFilesOnServer(sftp, subPath));
+                }
+            } else {
+                String fullPath = path + delimiter + fileName;
+                fileList.add(fullPath);
+            }
+        }
+        return fileList;
+    }
+
+    // sync file
+    public void syncStore(ChannelSftp sftp, String path) throws SftpException {
         List<String> listRemove = new ArrayList<>();
         // add remove
         for (String list : listCache) {
@@ -66,11 +83,8 @@ public class DownloadFileFTP implements Tasklet {
             }
         }
         //         update new info
-        for (ChannelSftp.LsEntry listEntry : listUpdate) {
-            if (!listEntry.getFilename().equals(".") && !listEntry.getFilename().equals("..")) {
-                listCache.add(listEntry.getFilename());
-            }
-        }
+        List<String> listServer = listFilesOnServer(sftp, path);
+        listCache.addAll(listServer);
         // remove
         for (String listFileRemove : listRemove) {
             listCache.remove(listFileRemove);
