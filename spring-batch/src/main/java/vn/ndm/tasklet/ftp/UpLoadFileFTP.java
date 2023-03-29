@@ -36,7 +36,6 @@ public class UpLoadFileFTP implements Tasklet {
         String pathServer = FolderUtils.getFilePathToSave().getProperty("path-upload-server");
         try {
             List<File> files = deleteRecursive(new File(pathLocal));
-            log.info("============= {}", files.size());
             for (File file : files) {
                 ChannelSftp sftp = connectFTP.getConnect();
                 sftp.put(file.getAbsolutePath(), pathServer);

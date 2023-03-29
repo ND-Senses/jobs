@@ -23,44 +23,4 @@ public class DataSourceConfiguration {
         dataSourceBuilder.password("123456");
         return dataSourceBuilder.build();
     }
-
-    @Bean(name = "ocs-testbed")
-    public DataSource ocsLogDataSource() {
-        DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@10.252.10.246:1521:ocs");
-        dataSourceBuilder.username("ocs");
-        dataSourceBuilder.password("ocssupport123");
-        return dataSourceBuilder.build();
-    }
-
-    @Bean(name = "ocs-pro")
-    public DataSource ocsProDataSource() {
-        DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@10.252.10.246:1521:ocs");
-        dataSourceBuilder.username("ocs");
-        dataSourceBuilder.password("ocssupport123");
-        return dataSourceBuilder.build();
-    }
-
-    @Bean(name = "bhtt")
-    public DataSource bhttDataSource() {
-        DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@//localhost:1521/bhttdb");
-        dataSourceBuilder.username("OCSSP");
-        dataSourceBuilder.password("ocsSP$2021");
-        return dataSourceBuilder.build();
-    }
-
-    @Bean(name = "e-office")
-    public DataSource eOfficeDataSource() {
-        DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@10.193.72.23:1521:eofdichvu");
-        dataSourceBuilder.username("CLOUD_ADMIN_DEV_NEO_1");
-        dataSourceBuilder.password("vnpt123");
-        return dataSourceBuilder.build();
-    }
 }

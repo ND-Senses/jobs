@@ -28,7 +28,7 @@ public class ScheduleJob {
     @Scheduled(fixedDelayString = "30000")
     public void perform() throws Exception {
         for (String jobName : jobRegistry.getJobNames()) {
-            log.info("Job Started at :" + new Date());
+            log.info("Job name {} Started at :{}", jobName, new Date());
             JobParameters param = new JobParametersBuilder().addString(jobName, String.valueOf(System.currentTimeMillis()))
                     .toJobParameters();
             JobExecution execution = jobLauncher.run(jobRegistry.getJob(jobName), param);
