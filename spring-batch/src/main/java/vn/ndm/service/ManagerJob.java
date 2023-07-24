@@ -5,8 +5,9 @@ import org.springframework.batch.core.configuration.DuplicateJobException;
 import org.springframework.batch.core.configuration.JobRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import vn.ndm.service.impl.JobExportFileImpl;
-import vn.ndm.service.impl.JobFtpImpl;
+import vn.ndm.service.impl.DatabaseStatsToolImpl;
+import vn.ndm.service.impl.ExportDLLImpl;
+import vn.ndm.service.impl.GenerateDataImpl;
 
 import javax.annotation.PostConstruct;
 
@@ -14,20 +15,23 @@ import javax.annotation.PostConstruct;
 @Service
 public class ManagerJob {
 
-    private final JobFtpImpl jobFtpImpl;
-    private final JobExportFileImpl exportFile;
+    private final ExportDLLImpl exportDLL;
+    private final GenerateDataImpl generateData;
+    private final DatabaseStatsToolImpl statsTool;
     private final JobRegistry jobRegistry;
 
     @Autowired
-    public ManagerJob(JobFtpImpl jobFtpImpl, JobExportFileImpl exportFile, JobRegistry jobRegistry) {
-        this.jobFtpImpl = jobFtpImpl;
-        this.exportFile = exportFile;
+    public ManagerJob(ExportDLLImpl exportDLL, GenerateDataImpl generateData, DatabaseStatsToolImpl statsTool1, JobRegistry jobRegistry) {
+        this.exportDLL = exportDLL;
+        this.generateData = generateData;
+        this.statsTool = statsTool1;
         this.jobRegistry = jobRegistry;
     }
 
     @PostConstruct
     public void setJobRegistry() throws DuplicateJobException {
-        jobRegistry.register(jobFtpImpl);
-        jobRegistry.register(exportFile);
+        jobRegistry.register(exportDLL);
+        jobRegistry.register(generateData);
+        jobRegistry.register(statsTool);
     }
 }

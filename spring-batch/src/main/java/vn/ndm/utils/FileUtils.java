@@ -1,15 +1,11 @@
 package vn.ndm.utils;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import lombok.extern.slf4j.Slf4j;
+
+import java.io.*;
 import java.nio.file.Files;
 
-/**
- * @author cimit
- * @Date: 28-05-2021
- */
+@Slf4j
 public class FileUtils {
     public FileUtils() {
         // TODO document why this constructor is empty
@@ -24,7 +20,7 @@ public class FileUtils {
     }
 
     public static String readFile(File f) {
-        try {
+        try{
             byte[] bytes = Files.readAllBytes(f.toPath());
             return new String(bytes);
         } catch (Exception e) {
@@ -34,7 +30,7 @@ public class FileUtils {
     }
 
     public static String readFile2(String f) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(f))){
             String line = reader.readLine();
             while (line != null) {
                 System.out.println(line);
@@ -44,5 +40,22 @@ public class FileUtils {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void writeToFile(String filePath, String data) {
+        File packageFile = new File(filePath);
+        try (FileWriter writer = new FileWriter(packageFile)){
+            // Tạo file và ghi DDL vào file
+            writer.write(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void folderIsExist(String pathFolder) {
+        File file = new File(pathFolder);
+        boolean c = file.mkdirs();
+        if (!c) log.info("Folder {} exist!", file.getName());
+        log.info("Create folder {} success!", file.getName());
     }
 }

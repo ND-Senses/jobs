@@ -1,4 +1,4 @@
-package vn.ndm.config;
+package vn.ndm.jobdatabase.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.jdbc.DataSourceBuilder;

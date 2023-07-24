@@ -109,12 +109,5 @@ public class FolderUtils {
             log.info("Folder create error!");
         }
     }
-
-    public static void main(String[] args) {
-        String path = "C:/Users/admin/Desktop/1090-901";
-        for (String a : getAllFiles(path)) {
-            System.out.println(a);
-        }
-    }
 }
 

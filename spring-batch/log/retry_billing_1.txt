@@ -1,1 +1,0 @@
-{"ps":{"p":[{"k":"MD_REMOTE","v":"APIGW"},{"k":"SESSION","v":"MO8901713799824858"},{"k":"CHANNEL","v":"SMS"},{"k":"MSISDN","v":"84934467240"},{"k":"NEW_PROFILE","v":"PFC"},{"k":"OLD_PROFILE","v":"ZHN"},{"k":"COMMAND","v":"change_profile"},{"k":"TIME_CHANGE","v":"24/08/2022 14:31:38"}]}}
