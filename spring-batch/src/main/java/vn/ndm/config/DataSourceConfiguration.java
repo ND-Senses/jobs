@@ -14,12 +14,12 @@ public class DataSourceConfiguration {
     public static final String COM_MYSQL_CJ_JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 
     @Primary
-    @Bean(name = "mysql")
+    @Bean(name = "oracle")
     public DataSource mysqlDataSource() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName(COM_MYSQL_CJ_JDBC_DRIVER);
-        dataSourceBuilder.url("jdbc:mysql://localhost:3306/admin");
-        dataSourceBuilder.username("root");
+        dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
+        dataSourceBuilder.url("jdbc:oracle:thin:@//localhost:1521/orcl");
+        dataSourceBuilder.username("manhnd");
         dataSourceBuilder.password("123456");
         return dataSourceBuilder.build();
     }

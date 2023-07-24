@@ -27,7 +27,7 @@ public class ExportFile implements Tasklet {
 
     private final DataSource dataSource;
 
-    public ExportFile(@Qualifier("mysql") DataSource dataSource) {
+    public ExportFile(@Qualifier("oracle") DataSource dataSource) {
         this.dataSource = dataSource;
     }
 

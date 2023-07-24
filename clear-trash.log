@@ -1,0 +1,304 @@
+2023-07-22 00:14:08.485  INFO 15824 --- [main] vn.ndm.BatchProcessingApplication        : Starting BatchProcessingApplication using Java 1.8.0_321 on ND-Senses with PID 15824 (D:\example\jobs\spring-batch\target\classes started by admin in D:\example\jobs)
+2023-07-22 00:14:08.488  INFO 15824 --- [main] vn.ndm.BatchProcessingApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-22 00:14:09.339  INFO 15824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-22 00:14:10.231  INFO 15824 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-22 00:14:10.469  INFO 15824 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
+2023-07-22 00:14:10.571  INFO 15824 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2023-07-22 00:14:10.582  INFO 15824 --- [main] vn.ndm.service.impl.JobFtpImpl           : step1
+2023-07-22 00:14:10.599  INFO 15824 --- [main] vn.ndm.service.impl.JobFtpImpl           : step2
+2023-07-22 00:14:10.728  INFO 15824 --- [main] vn.ndm.BatchProcessingApplication        : Started BatchProcessingApplication in 2.876 seconds (JVM running for 4.803)
+2023-07-22 00:14:10.730  INFO 15824 --- [main] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
+2023-07-22 00:14:10.735  INFO 15824 --- [scheduling-1] o.s.b.c.l.support.SimpleJobOperator      : Locating parameters for next instance of job with name=JobFTP
+2023-07-22 00:14:10.955  INFO 15824 --- [scheduling-1] o.s.b.c.l.support.SimpleJobOperator      : Attempting to launch job with name=JobFTP and parameters={JobFTP=1679556251412, run.id=1}
+2023-07-22 00:14:11.086  INFO 15824 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=JobExport]] launched with the following parameters: [{}]
+2023-07-22 00:14:11.151  INFO 15824 --- [main] v.n.l.JobCompletionJobExecutionListener  : #BeforeJob
+2023-07-22 00:14:11.179  INFO 15824 --- [scheduling-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=JobFTP]] launched with the following parameters: [{JobFTP=1679556251412, run.id=1}]
+2023-07-22 00:14:11.230  INFO 15824 --- [scheduling-1] v.n.l.JobCompletionJobExecutionListener  : #BeforeJob
+2023-07-22 00:14:11.251  INFO 15824 --- [main] o.s.batch.core.job.SimpleStepHandler     : Step already complete or not restartable, so no action to execute: StepExecution: id=66, version=3, name=step1, status=COMPLETED, exitStatus=COMPLETED, readCount=0, filterCount=0, writeCount=0 readSkipCount=0, writeSkipCount=0, processSkipCount=0, commitCount=1, rollbackCount=0, exitDescription=
+2023-07-22 00:14:11.255  INFO 15824 --- [main] v.n.l.JobCompletionJobExecutionListener  : #AfterJob
+2023-07-22 00:14:11.255  INFO 15824 --- [main] v.n.l.JobCompletionJobExecutionListener  : ### JOB FINISHED ###
+2023-07-22 00:14:11.255  INFO 15824 --- [main] v.n.l.JobCompletionJobExecutionListener  : JobName: JobExport, JobId: 46, Status: COMPLETED
+2023-07-22 00:14:11.308  INFO 15824 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=JobExport]] completed with the following parameters: [{}] and the following status: [COMPLETED] in 143ms
+2023-07-22 00:14:11.335  INFO 15824 --- [scheduling-1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [step1]
+2023-07-22 00:14:11.452  INFO 15824 --- [scheduling-1] vn.ndm.tasklet.ftp.DownloadFileFTP       : #List store file: 0
+2023-07-22 00:14:11.460  INFO 15824 --- [scheduling-1] vn.ndm.utils.FolderUtils                 : Folder is exists!
+2023-07-22 00:14:11.474  INFO 15824 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=JobFTP]] launched with the following parameters: [{JobFTP=1679556251412, run.id=2}]
+2023-07-22 00:14:11.501  INFO 15824 --- [main] v.n.l.JobCompletionJobExecutionListener  : #BeforeJob
+2023-07-22 00:14:11.558  INFO 15824 --- [main] o.s.batch.core.job.SimpleStepHandler     : Executing step: [step1]
+2023-07-22 00:14:11.634  INFO 15824 --- [main] vn.ndm.tasklet.ftp.DownloadFileFTP       : #List store file: 0
+2023-07-22 00:14:11.635  INFO 15824 --- [main] vn.ndm.utils.FolderUtils                 : Folder is exists!
+2023-07-22 00:14:32.621  INFO 15824 --- [scheduling-1] o.s.batch.core.step.AbstractStep         : Step: [step1] executed in 21s286ms
+2023-07-22 00:14:32.737  INFO 15824 --- [main] o.s.batch.core.step.AbstractStep         : Step: [step1] executed in 21s179ms
+2023-07-22 00:14:32.763  INFO 15824 --- [scheduling-1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [step2]
+2023-07-22 00:14:32.875  INFO 15824 --- [scheduling-1] vn.ndm.tasklet.ftp.UpLoadFileFTP         : deleteRecursive: spring-batch\job
+2023-07-22 00:14:32.902  INFO 15824 --- [main] o.s.batch.core.job.SimpleStepHandler     : Executing step: [step2]
+2023-07-22 00:14:32.975  INFO 15824 --- [main] vn.ndm.tasklet.ftp.UpLoadFileFTP         : deleteRecursive: spring-batch\job
+2023-07-22 00:14:53.998  INFO 15824 --- [scheduling-1] o.s.batch.core.step.AbstractStep         : Step: [step2] executed in 21s234ms
+2023-07-22 00:14:54.026  INFO 15824 --- [scheduling-1] v.n.l.JobCompletionJobExecutionListener  : #AfterJob
+2023-07-22 00:14:54.026  INFO 15824 --- [scheduling-1] v.n.l.JobCompletionJobExecutionListener  : ### JOB FINISHED ###
+2023-07-22 00:14:54.026  INFO 15824 --- [scheduling-1] v.n.l.JobCompletionJobExecutionListener  : JobName: JobFTP, JobId: 598, Status: COMPLETED
+2023-07-22 00:14:54.053  INFO 15824 --- [main] o.s.batch.core.step.AbstractStep         : Step: [step2] executed in 21s151ms
+2023-07-22 00:14:54.079  INFO 15824 --- [scheduling-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=JobFTP]] completed with the following parameters: [{JobFTP=1679556251412, run.id=1}] and the following status: [COMPLETED] in 42s846ms
+2023-07-22 00:14:54.079  INFO 15824 --- [scheduling-1] vn.ndm.config.ScheduleJob                : Job name JobFTP Started at :Sat Jul 22 00:14:54 ICT 2023
+2023-07-22 00:14:54.109  INFO 15824 --- [main] v.n.l.JobCompletionJobExecutionListener  : #AfterJob
+2023-07-22 00:14:54.109  INFO 15824 --- [main] v.n.l.JobCompletionJobExecutionListener  : ### JOB FINISHED ###
+2023-07-22 00:14:54.109  INFO 15824 --- [main] v.n.l.JobCompletionJobExecutionListener  : JobName: JobFTP, JobId: 599, Status: COMPLETED
+2023-07-22 00:14:54.163  INFO 15824 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=JobFTP]] completed with the following parameters: [{JobFTP=1679556251412, run.id=2}] and the following status: [COMPLETED] in 42s635ms
+2023-07-22 00:14:54.218  INFO 15824 --- [scheduling-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=JobFTP]] launched with the following parameters: [{JobFTP=1689959694079}]
+2023-07-22 00:14:54.246  INFO 15824 --- [scheduling-1] v.n.l.JobCompletionJobExecutionListener  : #BeforeJob
+2023-07-22 00:14:54.300  INFO 15824 --- [scheduling-1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [step1]
+2023-07-22 00:14:54.356  INFO 15824 --- [scheduling-1] vn.ndm.tasklet.ftp.DownloadFileFTP       : #List store file: 0
+2023-07-22 00:14:54.357  INFO 15824 --- [scheduling-1] vn.ndm.utils.FolderUtils                 : Folder is exists!
+2023-07-22 00:15:15.474  INFO 15824 --- [scheduling-1] o.s.batch.core.step.AbstractStep         : Step: [step1] executed in 21s174ms
+2023-07-22 00:15:15.567  INFO 15824 --- [scheduling-1] o.s.batch.core.job.SimpleStepHandler     : Executing step: [step2]
+2023-07-22 00:15:15.623  INFO 15824 --- [scheduling-1] vn.ndm.tasklet.ftp.UpLoadFileFTP         : deleteRecursive: spring-batch\job
+2023-07-22 00:15:15.654  INFO 15824 --- [scheduling-1] o.s.batch.core.step.AbstractStep         : Step: [step2] executed in 87ms
+2023-07-22 00:15:15.680  INFO 15824 --- [scheduling-1] v.n.l.JobCompletionJobExecutionListener  : #AfterJob
+2023-07-22 00:15:15.680  INFO 15824 --- [scheduling-1] v.n.l.JobCompletionJobExecutionListener  : ### JOB FINISHED ###
+2023-07-22 00:15:15.680  INFO 15824 --- [scheduling-1] v.n.l.JobCompletionJobExecutionListener  : JobName: JobFTP, JobId: 600, Status: COMPLETED
+2023-07-22 00:15:15.707  INFO 15824 --- [scheduling-1] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=JobFTP]] completed with the following parameters: [{JobFTP=1689959694079}] and the following status: [COMPLETED] in 21s461ms
+2023-07-22 00:15:15.707  INFO 15824 --- [scheduling-1] vn.ndm.config.ScheduleJob                : Job finished with status :COMPLETED
+2023-07-22 00:15:15.707  INFO 15824 --- [scheduling-1] o.s.b.c.l.support.SimpleJobOperator      : Locating parameters for next instance of job with name=JobExport
+2023-07-22 00:15:15.710 ERROR 15824 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+java.lang.IllegalArgumentException: No job parameters incrementer found for job=JobExport
+	at org.springframework.util.Assert.notNull(Assert.java:201) ~[spring-core-5.3.23.jar:5.3.23]
+	at org.springframework.batch.core.JobParametersBuilder.getNextJobParameters(JobParametersBuilder.java:254) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.batch.core.launch.support.SimpleJobOperator.startNextInstance(SimpleJobOperator.java:350) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.batch.core.launch.support.SimpleJobOperator$$FastClassBySpringCGLIB$$44ee6049.invoke(<generated>) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.23.jar:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.batch.core.launch.support.SimpleJobOperator$$EnhancerBySpringCGLIB$$cc1fcd78.startNextInstance(<generated>) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at vn.ndm.config.ScheduleJob.perform(ScheduleJob.java:36) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_321]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_321]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_321]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_321]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.20.jar:5.3.20]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_321]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_321]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_321]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_321]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_321]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_321]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_321]
+
+2023-07-22 00:15:37.357  INFO 3568 --- [main] vn.ndm.BatchProcessingApplication        : Starting BatchProcessingApplication using Java 1.8.0_321 on ND-Senses with PID 3568 (D:\example\jobs\spring-batch\target\classes started by admin in D:\example\jobs)
+2023-07-22 00:15:37.360  INFO 3568 --- [main] vn.ndm.BatchProcessingApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-22 00:15:38.130  INFO 3568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-22 00:15:38.828  INFO 3568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-22 00:15:39.032  WARN 3568 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'managerJob' defined in file [D:\example\jobs\spring-batch\target\classes\vn\ndm\service\ManagerJob.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobExportFileImpl' defined in file [D:\example\jobs\spring-batch\target\classes\vn\ndm\service\impl\JobExportFileImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'exportFile' defined in file [D:\example\jobs\spring-batch\target\classes\vn\ndm\tasklet\job\ExportFile.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Qualifier(value=mysql)}
+2023-07-22 00:15:39.032  INFO 3568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-07-22 00:15:39.097  INFO 3568 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-07-22 00:15:39.105  INFO 3568 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-07-22 00:15:39.138 ERROR 3568 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in vn.ndm.tasklet.job.ExportFile required a bean of type 'javax.sql.DataSource' that could not be found.
+
+The following candidates were found but could not be injected:
+	- User-defined bean method 'mysqlDataSource' in 'DataSourceConfiguration'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2023-07-22 00:16:54.189  INFO 10244 --- [main] vn.ndm.BatchProcessingApplication        : Starting BatchProcessingApplication using Java 1.8.0_321 on ND-Senses with PID 10244 (D:\example\jobs\spring-batch\target\classes started by admin in D:\example\jobs)
+2023-07-22 00:16:54.192  INFO 10244 --- [main] vn.ndm.BatchProcessingApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-07-22 00:16:54.957  INFO 10244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-22 00:16:55.597  INFO 10244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-22 00:16:55.724  INFO 10244 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: ORACLE
+2023-07-22 00:16:55.795  INFO 10244 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2023-07-22 00:16:55.807  INFO 10244 --- [main] vn.ndm.service.impl.JobFtpImpl           : step1
+2023-07-22 00:16:55.821  INFO 10244 --- [main] vn.ndm.service.impl.JobFtpImpl           : step2
+2023-07-22 00:16:55.927  INFO 10244 --- [main] vn.ndm.BatchProcessingApplication        : Started BatchProcessingApplication in 2.256 seconds (JVM running for 3.508)
+2023-07-22 00:16:55.929  INFO 10244 --- [main] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
+2023-07-22 00:16:55.931  INFO 10244 --- [scheduling-1] o.s.b.c.l.support.SimpleJobOperator      : Locating parameters for next instance of job with name=JobFTP
+2023-07-22 00:16:56.020  INFO 10244 --- [scheduling-1] o.s.b.c.l.support.SimpleJobOperator      : Attempting to launch job with name=JobFTP and parameters={run.id=1}
+2023-07-22 00:16:56.797  INFO 10244 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-07-22 00:16:56.800 ERROR 10244 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+org.springframework.dao.CannotSerializeTransactionException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; ORA-08177: can't serialize access for this transaction
+; nested exception is java.sql.SQLException: ORA-08177: can't serialize access for this transaction
+
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:275) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_321]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_321]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_321]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_321]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.20.jar:5.3.20]
+	at com.sun.proxy.$Proxy47.createJobExecution(Unknown Source) ~[na:na]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_321]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_321]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_321]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_321]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.20.jar:5.3.20]
+	at com.sun.proxy.$Proxy49.run(Unknown Source) ~[na:na]
+	at org.springframework.batch.core.launch.support.SimpleJobOperator.startNextInstance(SimpleJobOperator.java:356) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.batch.core.launch.support.SimpleJobOperator$$FastClassBySpringCGLIB$$44ee6049.invoke(<generated>) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.23.jar:5.3.23]
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.batch.core.launch.support.SimpleJobOperator$$EnhancerBySpringCGLIB$$98d740df.startNextInstance(<generated>) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at vn.ndm.config.ScheduleJob.perform(ScheduleJob.java:36) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_321]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_321]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_321]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_321]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.20.jar:5.3.20]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.20.jar:5.3.20]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_321]
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_321]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_321]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_321]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_321]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_321]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_321]
+Caused by: java.sql.SQLException: ORA-08177: can't serialize access for this transaction
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:509) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:461) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1104) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:550) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:268) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:655) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:270) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:91) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:970) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1205) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3666) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeInternal(T4CPreparedStatement.java:1426) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3756) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3736) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1063) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	... 53 common frames omitted
+Caused by: oracle.jdbc.OracleDatabaseException: ORA-08177: can't serialize access for this transaction
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:513) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	... 71 common frames omitted
+
+2023-07-22 00:16:56.822 ERROR 10244 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:765) [spring-boot-2.7.4.jar:2.7.4]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:752) [spring-boot-2.7.4.jar:2.7.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.7.4.jar:2.7.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-2.7.4.jar:2.7.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-2.7.4.jar:2.7.4]
+	at vn.ndm.BatchProcessingApplication.main(BatchProcessingApplication.java:9) [classes/:na]
+Caused by: org.springframework.dao.CannotSerializeTransactionException: PreparedStatementCallback; SQL [INSERT into BATCH_JOB_INSTANCE(JOB_INSTANCE_ID, JOB_NAME, JOB_KEY, VERSION) values (?, ?, ?, ?)]; ORA-08177: can't serialize access for this transaction
+; nested exception is java.sql.SQLException: ORA-08177: can't serialize access for this transaction
+
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:275) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:667) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.batch.core.repository.dao.JdbcJobInstanceDao.createJobInstance(JdbcJobInstanceDao.java:120) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:148) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_321]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_321]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_321]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_321]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.20.jar:5.3.20]
+	at com.sun.proxy.$Proxy47.createJobExecution(Unknown Source) ~[na:na]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_321]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_321]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_321]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_321]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) ~[spring-batch-core-4.3.6.jar:4.3.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.20.jar:5.3.20]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.20.jar:5.3.20]
+	at com.sun.proxy.$Proxy49.run(Unknown Source) ~[na:na]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) ~[spring-boot-autoconfigure-2.7.4.jar:2.7.4]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) ~[spring-boot-autoconfigure-2.7.4.jar:2.7.4]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) ~[spring-boot-autoconfigure-2.7.4.jar:2.7.4]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) ~[spring-boot-autoconfigure-2.7.4.jar:2.7.4]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) ~[spring-boot-autoconfigure-2.7.4.jar:2.7.4]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:762) [spring-boot-2.7.4.jar:2.7.4]
+	... 5 common frames omitted
+Caused by: java.sql.SQLException: ORA-08177: can't serialize access for this transaction
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:509) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:461) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1104) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:550) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:268) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:655) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:270) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:91) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:970) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1205) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3666) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeInternal(T4CPreparedStatement.java:1426) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3756) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3736) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1063) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651) ~[spring-jdbc-5.3.20.jar:5.3.20]
+	... 43 common frames omitted
+Caused by: oracle.jdbc.OracleDatabaseException: ORA-08177: can't serialize access for this transaction
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:513) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	... 61 common frames omitted
+
+2023-07-22 00:16:56.828  INFO 10244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-07-22 00:16:56.840  INFO 10244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
