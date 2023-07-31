@@ -1,0 +1,17 @@
+application:
+  name: Session-Management
+  organization: Company Neo
+  version: 1.0
+  company: NEO JSC
+  by-name: Manhnd
+session-management:
+  max-session: 250
+  #    Every 30s
+  time-keep-alive: 30000
+  int-session: 2
+  min-session: 2
+  time-wait-free: 10000
+  #      time life ss = 10p
+  session-time-out: 600000
+  session-alive: 200000
+  fixe-delay: 30000

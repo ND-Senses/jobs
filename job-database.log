@@ -1,0 +1,4 @@
+2023-07-29 14:53:02.235  INFO 20768 --- [main] v.n.jobdatabase.JobDatabaseApplication   : Starting JobDatabaseApplication using Java 1.8.0_321 on ND-Senses with PID 20768 (D:\example\jobs\job-database\target\classes started by admin in D:\example\jobs)
+2023-07-29 14:53:02.242  INFO 20768 --- [main] v.n.jobdatabase.JobDatabaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-07-29 14:53:02.933  INFO 20768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-29 14:53:02.961  INFO 20768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
