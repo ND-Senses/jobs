@@ -1,4 +1,4 @@
-package vn.ndm.telnet;
+package vn.ndm.telnet.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.net.telnet.TelnetClient;
@@ -13,7 +13,7 @@ import java.io.IOException;
 @Service
 public class TelnetService {
 
-    String path = "tool-telnet/telnet/servers.txt";
+    String path = "telnet/servers.txt";
 
     @PostConstruct
     public void init() {
@@ -44,9 +44,9 @@ public class TelnetService {
         try{
             TelnetClient telnetClient = new TelnetClient();
             telnetClient.connect(host, port);
-            log.info("===== {} host {} port {} - Success", name, host, port);
+            log.info("=====> {} Host {} port {} - Success", name, host, port);
         } catch (IOException e) {
-            log.info("===== {} host {} port {} - Error", name, host, port);
+            log.info("=====> {} Host {} port {} - Error {}", name, host, port,e.getMessage());
         }
     }
 }

@@ -1,0 +1,16 @@
+2023-08-09 15:01:42.847  INFO 8328 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Starting ToolTelnetApplication using Java 11.0.15.1 on ND-Senses with PID 8328 (D:\example\jobs\tool-telnet\target\classes started by admin in D:\example\jobs\tool-telnet)
+2023-08-09 15:01:42.852  INFO 8328 --- [main] vn.ndm.telnet.ToolTelnetApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-08-09 15:01:43.339  INFO 8328 --- [main] vn.ndm.telnet.service.TelnetService      : ===== VASPLATFORM1 host 10.252.10.248 port 8080 - Success
+2023-08-09 15:01:43.447  INFO 8328 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Started ToolTelnetApplication in 1.134 seconds (JVM running for 2.269)
+2023-08-09 15:25:31.165  INFO 19524 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Starting ToolTelnetApplication using Java 11.0.15.1 on ND-Senses with PID 19524 (D:\example\jobs\tool-telnet\target\classes started by admin in D:\example\jobs\tool-telnet)
+2023-08-09 15:25:31.168  INFO 19524 --- [main] vn.ndm.telnet.ToolTelnetApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-08-09 15:25:31.645  INFO 19524 --- [main] vn.ndm.telnet.service.TelnetService      : ===== VASPLATFORM1 host 10.252.10.248 port 8080 - Success
+2023-08-09 15:25:31.722  INFO 19524 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Started ToolTelnetApplication in 1.005 seconds (JVM running for 2.169)
+2023-08-09 15:39:04.976  INFO 17936 --- [main] v.ndm.telnet.ToolTelnetApplicationTests  : Starting ToolTelnetApplicationTests using Java 1.8.0_321 on ND-Senses with PID 17936 (started by admin in D:\example\jobs\tool-telnet)
+2023-08-09 15:39:04.978  INFO 17936 --- [main] v.ndm.telnet.ToolTelnetApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-08-09 15:39:05.417  INFO 17936 --- [main] vn.ndm.telnet.service.TelnetService      : =====> VASPLATFORM1 Host 10.252.10.248 port 8080 - Success
+2023-08-09 15:39:05.507  INFO 17936 --- [main] v.ndm.telnet.ToolTelnetApplicationTests  : Started ToolTelnetApplicationTests in 0.905 seconds (JVM running for 1.942)
+2023-08-09 15:39:22.612  INFO 18756 --- [main] v.ndm.telnet.ToolTelnetApplicationTests  : Starting ToolTelnetApplicationTests using Java 1.8.0_321 on ND-Senses with PID 18756 (started by admin in D:\example\jobs\tool-telnet)
+2023-08-09 15:39:22.616  INFO 18756 --- [main] v.ndm.telnet.ToolTelnetApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-08-09 15:39:23.121  INFO 18756 --- [main] vn.ndm.telnet.service.TelnetService      : =====> VASPLATFORM1 Host 10.252.10.248 port 8080 - Success
+2023-08-09 15:39:23.213  INFO 18756 --- [main] v.ndm.telnet.ToolTelnetApplicationTests  : Started ToolTelnetApplicationTests in 1.073 seconds (JVM running for 2.099)
