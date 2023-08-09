@@ -51,10 +51,8 @@ public class TelnetService {
                     }
                 }
             }
-            taskExecutor.shutdown();
         } catch (IOException e) {
             log.info("Error reading file: {}", e.getMessage());
-            Thread.currentThread().interrupt();
         }
     }
 }

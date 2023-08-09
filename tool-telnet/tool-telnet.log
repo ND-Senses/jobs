@@ -199,3 +199,106 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for l
 2023-08-09 16:37:17.318  INFO 13404 --- [taskExecutor-9] vn.ndm.telnet.service.TelnetService      : =====> SDP Host 10.54.2.58 port 80 - Error Connection timed out: connect
 2023-08-09 16:37:17.318  INFO 13404 --- [taskExecutor-7] vn.ndm.telnet.service.TelnetService      : =====> MGOLF Host 10.54.5.72 port 8180 - Error Connection timed out: connect
 2023-08-09 16:37:17.318  INFO 13404 --- [taskExecutor-10] vn.ndm.telnet.service.TelnetService      : =====> UCB Host 10.54.5.134 port 80 - Error Connection timed out: connect
+2023-08-09 16:38:33.157  INFO 17568 --- [main] v.ndm.telnet.ToolTelnetApplicationTests  : Starting ToolTelnetApplicationTests using Java 1.8.0_321 on ND-Senses with PID 17568 (started by admin in D:\example\jobs\tool-telnet)
+2023-08-09 16:38:33.159  INFO 17568 --- [main] v.ndm.telnet.ToolTelnetApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2023-08-09 16:38:33.708  INFO 17568 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> Vasonline Host 10.252.10.248 port 8081 - Success
+2023-08-09 16:38:33.708  INFO 17568 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> VNPT Host 10.252.10.248 port 8080 - Success
+2023-08-09 16:38:33.786  INFO 17568 --- [main] v.ndm.telnet.ToolTelnetApplicationTests  : Started ToolTelnetApplicationTests in 1.094 seconds (JVM running for 3.245)
+2023-08-09 16:52:44.106  INFO 16680 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Starting ToolTelnetApplication using Java 11.0.15.1 on ND-Senses with PID 16680 (D:\example\jobs\tool-telnet\target\classes started by admin in D:\example\jobs\tool-telnet)
+2023-08-09 16:52:44.115  INFO 16680 --- [main] vn.ndm.telnet.ToolTelnetApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-08-09 16:52:44.622  INFO 16680 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> VNPT Host 10.252.10.248 port 8080 - Success
+2023-08-09 16:52:44.622  INFO 16680 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> Vasonline Host 10.252.10.248 port 8081 - Success
+2023-08-09 16:52:44.687  INFO 16680 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Started ToolTelnetApplication in 1.26 seconds (JVM running for 2.346)
+2023-08-09 16:52:54.039  INFO 4884 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Starting ToolTelnetApplication using Java 11.0.15.1 on ND-Senses with PID 4884 (D:\example\jobs\tool-telnet\target\classes started by admin in D:\example\jobs\tool-telnet)
+2023-08-09 16:52:54.043  INFO 4884 --- [main] vn.ndm.telnet.ToolTelnetApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-08-09 16:52:54.520  INFO 4884 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> VNPT Host 10.252.10.248 port 8080 - Success
+2023-08-09 16:52:54.520  INFO 4884 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> Vasonline Host 10.252.10.248 port 8081 - Success
+2023-08-09 16:52:54.589  INFO 4884 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Started ToolTelnetApplication in 0.929 seconds (JVM running for 1.906)
+2023-08-09 16:53:15.564  INFO 4884 --- [taskExecutor-6] vn.ndm.telnet.service.TelnetService      : =====> LBSINFO Host 10.151.22.94 port 5000 - Error Connection timed out: connect
+2023-08-09 16:53:15.564  INFO 4884 --- [taskExecutor-7] vn.ndm.telnet.service.TelnetService      : =====> MGOLF Host 10.54.5.72 port 8180 - Error Connection timed out: connect
+2023-08-09 16:53:15.564  INFO 4884 --- [taskExecutor-9] vn.ndm.telnet.service.TelnetService      : =====> SDP Host 10.54.2.58 port 80 - Error Connection timed out: connect
+2023-08-09 16:53:15.564  INFO 4884 --- [taskExecutor-8] vn.ndm.telnet.service.TelnetService      : =====> MGOV Host 10.151.190.192 port 8080 - Error Connection timed out: connect
+2023-08-09 16:53:15.564  INFO 4884 --- [taskExecutor-4] vn.ndm.telnet.service.TelnetService      : =====> KM Nokia C5 C6 500 Host 10.50.9.91 port 8080 - Error Connection timed out: connect
+2023-08-09 16:53:15.579  INFO 4884 --- [taskExecutor-10] vn.ndm.telnet.service.TelnetService      : =====> UCB Host 10.54.5.134 port 80 - Error Connection timed out: connect
+2023-08-09 16:53:15.579  INFO 4884 --- [taskExecutor-3] vn.ndm.telnet.service.TelnetService      : =====> khuyến mãi Nokia N9 603 700 701 Host 10.151.3.80 port 8080 - Error Connection timed out: connect
+2023-08-09 16:53:15.579  INFO 4884 --- [taskExecutor-5] vn.ndm.telnet.service.TelnetService      : =====> IOE Host 10.151.190.180 port 80 - Error Connection timed out: connect
+2023-08-09 17:03:11.622  INFO 7560 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Starting ToolTelnetApplication using Java 11.0.15.1 on ND-Senses with PID 7560 (D:\example\jobs\tool-telnet\target\classes started by admin in D:\example\jobs\tool-telnet)
+2023-08-09 17:03:11.626  INFO 7560 --- [main] vn.ndm.telnet.ToolTelnetApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-08-09 17:03:12.054  INFO 7560 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> Vasonline Host 10.252.10.248 port 8081 - Success
+2023-08-09 17:03:12.054  INFO 7560 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> VNPT Host 10.252.10.248 port 8080 - Success
+2023-08-09 17:03:12.120  INFO 7560 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Started ToolTelnetApplication in 0.942 seconds (JVM running for 2.008)
+2023-08-09 17:03:33.085  INFO 7560 --- [taskExecutor-6] vn.ndm.telnet.service.TelnetService      : =====> LBSINFO Host 10.151.22.94 port 5000 - Error Connection timed out: connect
+2023-08-09 17:03:33.085  INFO 7560 --- [taskExecutor-4] vn.ndm.telnet.service.TelnetService      : =====> KM Nokia C5 C6 500 Host 10.50.9.91 port 8080 - Error Connection timed out: connect
+2023-08-09 17:03:33.085  INFO 7560 --- [taskExecutor-7] vn.ndm.telnet.service.TelnetService      : =====> MGOLF Host 10.54.5.72 port 8180 - Error Connection timed out: connect
+2023-08-09 17:03:33.085  INFO 7560 --- [taskExecutor-10] vn.ndm.telnet.service.TelnetService      : =====> UCB Host 10.54.5.134 port 80 - Error Connection timed out: connect
+2023-08-09 17:03:33.085  INFO 7560 --- [taskExecutor-8] vn.ndm.telnet.service.TelnetService      : =====> MGOV Host 10.151.190.192 port 8080 - Error Connection timed out: connect
+2023-08-09 17:03:33.085  INFO 7560 --- [taskExecutor-3] vn.ndm.telnet.service.TelnetService      : =====> khuyến mãi Nokia N9 603 700 701 Host 10.151.3.80 port 8080 - Error Connection timed out: connect
+2023-08-09 17:03:33.085  INFO 7560 --- [taskExecutor-9] vn.ndm.telnet.service.TelnetService      : =====> SDP Host 10.54.2.58 port 80 - Error Connection timed out: connect
+2023-08-09 17:03:33.099  INFO 7560 --- [taskExecutor-5] vn.ndm.telnet.service.TelnetService      : =====> IOE Host 10.151.190.180 port 80 - Error Connection timed out: connect
+2023-08-09 17:07:13.438  INFO 12124 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Starting ToolTelnetApplication using Java 11.0.15.1 on ND-Senses with PID 12124 (D:\example\jobs\tool-telnet\target\classes started by admin in D:\example\jobs\tool-telnet)
+2023-08-09 17:07:13.441  INFO 12124 --- [main] vn.ndm.telnet.ToolTelnetApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-08-09 17:07:13.891  INFO 12124 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> VNPT Host 10.252.10.248 port 8080 - Success
+2023-08-09 17:07:13.891  INFO 12124 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> Vasonline Host 10.252.10.248 port 8081 - Success
+2023-08-09 17:07:13.954  INFO 12124 --- [main] vn.ndm.telnet.ToolTelnetApplication      : Started ToolTelnetApplication in 0.906 seconds (JVM running for 1.903)
+2023-08-09 17:07:34.920  INFO 12124 --- [taskExecutor-4] vn.ndm.telnet.service.TelnetService      : =====> KM Nokia C5 C6 500 Host 10.50.9.91 port 8080 - Error Connection timed out: connect
+2023-08-09 17:07:34.920  INFO 12124 --- [taskExecutor-5] vn.ndm.telnet.service.TelnetService      : =====> IOE Host 10.151.190.180 port 80 - Error Connection timed out: connect
+2023-08-09 17:07:34.920  INFO 12124 --- [taskExecutor-10] vn.ndm.telnet.service.TelnetService      : =====> UCB Host 10.54.5.134 port 80 - Error Connection timed out: connect
+2023-08-09 17:07:34.920  INFO 12124 --- [taskExecutor-7] vn.ndm.telnet.service.TelnetService      : =====> MGOLF Host 10.54.5.72 port 8180 - Error Connection timed out: connect
+2023-08-09 17:07:34.920  INFO 12124 --- [taskExecutor-6] vn.ndm.telnet.service.TelnetService      : =====> LBSINFO Host 10.151.22.94 port 5000 - Error Connection timed out: connect
+2023-08-09 17:07:34.920  INFO 12124 --- [taskExecutor-3] vn.ndm.telnet.service.TelnetService      : =====> khuyến mãi Nokia N9 603 700 701 Host 10.151.3.80 port 8080 - Error Connection timed out: connect
+2023-08-09 17:07:34.935  INFO 12124 --- [taskExecutor-9] vn.ndm.telnet.service.TelnetService      : =====> SDP Host 10.54.2.58 port 80 - Error Connection timed out: connect
+2023-08-09 17:07:34.935  INFO 12124 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> Email server Host 10.3.12.25 port 25 - Error Connection timed out: connect
+2023-08-09 17:07:34.935  INFO 12124 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> NTP server Host 10.247.251.10 port 123 - Error Connection timed out: connect
+2023-08-09 17:07:34.935  INFO 12124 --- [taskExecutor-8] vn.ndm.telnet.service.TelnetService      : =====> MGOV Host 10.151.190.192 port 8080 - Error Connection timed out: connect
+2023-08-09 17:07:55.978  INFO 12124 --- [taskExecutor-5] vn.ndm.telnet.service.TelnetService      : =====> NTP server Host 10.247.255.10 port 123 - Error Connection timed out: connect
+2023-08-09 17:07:55.993  INFO 12124 --- [taskExecutor-4] vn.ndm.telnet.service.TelnetService      : =====> NTP server Host 10.247.252.250 port 123 - Error Connection timed out: connect
+2023-08-09 17:07:55.993  INFO 12124 --- [taskExecutor-3] vn.ndm.telnet.service.TelnetService      : =====> SOAP Proxy Host 10.3.17.148 port 8080 - Error Connection timed out: connect
+2023-08-09 17:07:55.993  INFO 12124 --- [taskExecutor-10] vn.ndm.telnet.service.TelnetService      : =====> SMPPGW Host 10.51.37.196 port 6200 - Error Connection timed out: connect
+2023-08-09 17:07:55.993  INFO 12124 --- [taskExecutor-9] vn.ndm.telnet.service.TelnetService      : =====> VASP Host 10.3.7.115 port 7800 - Error Connection timed out: connect
+2023-08-09 17:07:55.993  INFO 12124 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> MCA Host 10.54.5.235 port 8181 - Error Connection timed out: connect
+2023-08-09 17:07:55.993  INFO 12124 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> MCA Host 10.54.5.242 port 8181 - Error Connection timed out: connect
+2023-08-09 17:07:55.993  INFO 12124 --- [taskExecutor-7] vn.ndm.telnet.service.TelnetService      : =====> SMPPGW Host 10.53.131.52 port 6200 - Error Connection timed out: connect
+2023-08-09 17:07:55.993  INFO 12124 --- [taskExecutor-8] vn.ndm.telnet.service.TelnetService      : =====> MCA Host 10.54.5.237 port 8181 - Error Connection timed out: connect
+2023-08-09 17:07:55.993  INFO 12124 --- [taskExecutor-6] vn.ndm.telnet.service.TelnetService      : =====> Email server Host 10.3.12.25 port 25 - Error Connection timed out: connect
+2023-08-09 17:08:17.012  INFO 12124 --- [taskExecutor-5] vn.ndm.telnet.service.TelnetService      : =====> MCA Host 10.54.5.242 port 8181 - Error Connection timed out: connect
+2023-08-09 17:08:17.028  INFO 12124 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> MCA3 Host 10.54.5.242 port 80 - Error Connection timed out: connect
+2023-08-09 17:08:17.028  INFO 12124 --- [taskExecutor-3] vn.ndm.telnet.service.TelnetService      : =====> MCA2 Host 10.54.5.235 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:17.028  INFO 12124 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> MCA3 Host 10.54.5.235 port 80 - Error Connection timed out: connect
+2023-08-09 17:08:17.028  INFO 12124 --- [taskExecutor-10] vn.ndm.telnet.service.TelnetService      : =====> MCA2 Host 10.54.5.237 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:17.028  INFO 12124 --- [taskExecutor-8] vn.ndm.telnet.service.TelnetService      : =====> MCA3 Host 10.54.5.242 port 80 - Error Connection timed out: connect
+2023-08-09 17:08:17.028  INFO 12124 --- [taskExecutor-4] vn.ndm.telnet.service.TelnetService      : =====> MCA2 Host 10.54.5.242 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:17.028  INFO 12124 --- [taskExecutor-7] vn.ndm.telnet.service.TelnetService      : =====> MCA3 Host 10.54.5.237 port 80 - Error Connection timed out: connect
+2023-08-09 17:08:17.028  INFO 12124 --- [taskExecutor-6] vn.ndm.telnet.service.TelnetService      : =====> FTP server Vasgate cloud Host 10.1.230.9 port 21 - Error Connection timed out: connect
+2023-08-09 17:08:17.044  INFO 12124 --- [taskExecutor-9] vn.ndm.telnet.service.TelnetService      : =====> MCA2 Host 10.54.5.242 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:38.051  INFO 12124 --- [taskExecutor-5] vn.ndm.telnet.service.TelnetService      : =====> FTP server Vasgate cloud Host 10.1.230.10 port 21 - Error Connection timed out: connect
+2023-08-09 17:08:38.067  INFO 12124 --- [taskExecutor-6] vn.ndm.telnet.service.TelnetService      : =====> Funring Host 10.51.35.15 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:38.067  INFO 12124 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> CDR tập trung Host 10.50.8.110 port 21 - Error Connection timed out: connect
+2023-08-09 17:08:38.067  INFO 12124 --- [taskExecutor-3] vn.ndm.telnet.service.TelnetService      : =====> Liveifo Host 10.151.9.180 port 8082 - Error Connection timed out: connect
+2023-08-09 17:08:38.067  INFO 12124 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> Funring Host 10.151.206.39 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:38.067  INFO 12124 --- [taskExecutor-7] vn.ndm.telnet.service.TelnetService      : =====> Funring Host 10.51.35.101 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:38.067  INFO 12124 --- [taskExecutor-8] vn.ndm.telnet.service.TelnetService      : =====> VASP Host 10.50.9.91 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:38.067  INFO 12124 --- [taskExecutor-10] vn.ndm.telnet.service.TelnetService      : =====> VASP Host 10.50.9.94 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:38.067  INFO 12124 --- [taskExecutor-4] vn.ndm.telnet.service.TelnetService      : =====> SDP Host 10.54.2.58 port 80 - Error Connection timed out: connect
+2023-08-09 17:08:38.083  INFO 12124 --- [taskExecutor-9] vn.ndm.telnet.service.TelnetService      : =====> Funring Host 10.51.35.69 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:59.102  INFO 12124 --- [taskExecutor-5] vn.ndm.telnet.service.TelnetService      : =====> Funring Host 10.51.35.16 port 8080 - Error Connection timed out: connect
+2023-08-09 17:08:59.118  INFO 12124 --- [taskExecutor-4] vn.ndm.telnet.service.TelnetService      : =====> Funring2 Host 10.51.35.16 port 38080 - Error Connection timed out: connect
+2023-08-09 17:08:59.118  INFO 12124 --- [taskExecutor-3] vn.ndm.telnet.service.TelnetService      : =====> Funring1 Host 10.51.35.69 port 21 - Error Connection timed out: connect
+2023-08-09 17:08:59.118  INFO 12124 --- [taskExecutor-10] vn.ndm.telnet.service.TelnetService      : =====> Funring2 Host 10.51.35.69 port 38080 - Error Connection timed out: connect
+2023-08-09 17:08:59.118  INFO 12124 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> Funring1 Host 10.51.35.16 port 21 - Error Connection timed out: connect
+2023-08-09 17:08:59.118  INFO 12124 --- [taskExecutor-8] vn.ndm.telnet.service.TelnetService      : =====> Funring2 Host 10.51.35.15 port 38080 - Error Connection timed out: connect
+2023-08-09 17:08:59.118  INFO 12124 --- [taskExecutor-6] vn.ndm.telnet.service.TelnetService      : =====> Funring1 Host 10.51.35.101 port 21 - Error Connection timed out: connect
+2023-08-09 17:08:59.118  INFO 12124 --- [taskExecutor-9] vn.ndm.telnet.service.TelnetService      : =====> OCSGW Host 10.50.132.57 port 18000 - Error Connection timed out: connect
+2023-08-09 17:08:59.118  INFO 12124 --- [taskExecutor-7] vn.ndm.telnet.service.TelnetService      : =====> Funring2 Host 10.51.35.101 port 38080 - Error Connection timed out: connect
+2023-08-09 17:08:59.118  INFO 12124 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> Funring1 Host 10.51.35.15 port 21 - Error Connection timed out: connect
+2023-08-09 17:09:20.154  INFO 12124 --- [taskExecutor-5] vn.ndm.telnet.service.TelnetService      : =====> OCSGW Host 10.50.132.58 port 18000 - Error Connection timed out: connect
+2023-08-09 17:09:20.169  INFO 12124 --- [taskExecutor-10] vn.ndm.telnet.service.TelnetService      : =====> PCRF Host 10.11.205.7 port 8081 - Error Connection timed out: connect
+2023-08-09 17:09:20.169  INFO 12124 --- [taskExecutor-3] vn.ndm.telnet.service.TelnetService      : =====> OCSGW Host 10.3.20.60 port 18000 - Error Connection timed out: connect
+2023-08-09 17:09:20.169  INFO 12124 --- [taskExecutor-1] vn.ndm.telnet.service.TelnetService      : =====> VASPLATFORM1 Host 10.3.176.30 port 6069 - Error Connection timed out: connect
+2023-08-09 17:09:20.169  INFO 12124 --- [taskExecutor-2] vn.ndm.telnet.service.TelnetService      : =====> PCRF Host 10.19.199.7 port 8081 - Error Connection timed out: connect
+2023-08-09 17:09:20.169  INFO 12124 --- [taskExecutor-8] vn.ndm.telnet.service.TelnetService      : =====> VASPLATFORM Host 10.54.140.22 port 8080 - Error Connection timed out: connect
+2023-08-09 17:09:20.169  INFO 12124 --- [taskExecutor-9] vn.ndm.telnet.service.TelnetService      : =====> VASPLATFORM1 Host 10.3.176.11 port 6069 - Error Connection timed out: connect
+2023-08-09 17:09:20.169  INFO 12124 --- [taskExecutor-4] vn.ndm.telnet.service.TelnetService      : =====> OCSGW Host 10.50.12.8 port 18000 - Error Connection timed out: connect
+2023-08-09 17:09:20.185  INFO 12124 --- [taskExecutor-7] vn.ndm.telnet.service.TelnetService      : =====> VASPLATFORM1 Host 10.3.176.30 port 6060 - Error Connection timed out: connect
+2023-08-09 17:09:20.185  INFO 12124 --- [taskExecutor-6] vn.ndm.telnet.service.TelnetService      : =====> VASPLATFORM1 Host 10.3.176.11 port 6060 - Error Connection timed out: connect
+2023-08-09 17:09:41.192  INFO 12124 --- [taskExecutor-5] vn.ndm.telnet.service.TelnetService      : =====> VASPLATFORM1 Host 10.3.176.13 port 6060 - Error Connection timed out: connect
+2023-08-09 17:09:41.208  INFO 12124 --- [taskExecutor-10] vn.ndm.telnet.service.TelnetService      : =====> VASPLATFORM1 Host 10.3.176.13 port 6069 - Error Connection timed out: connect
