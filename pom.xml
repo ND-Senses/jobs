@@ -20,6 +20,7 @@
         <module>clear-trash</module>
         <module>job-database</module>
         <module>session-management</module>
+        <module>tool-telnet</module>
     </modules>
 
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->

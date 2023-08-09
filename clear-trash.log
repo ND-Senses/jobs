@@ -1,4 +1,0 @@
-2023-07-29 14:53:24.021  INFO 18056 --- [main] vn.ndm.cleartrash.ClearTrashApplication  : Starting ClearTrashApplication using Java 1.8.0_321 on ND-Senses with PID 18056 (D:\example\jobs\clear-trash\target\classes started by admin in D:\example\jobs)
-2023-07-29 14:53:24.033  INFO 18056 --- [main] vn.ndm.cleartrash.ClearTrashApplication  : No active profile set, falling back to 1 default profile: "default"
-2023-07-29 14:53:25.362  INFO 18056 --- [scheduling-1] v.n.c.service.ScheduleJobService         : Size map: 0
-2023-07-29 14:53:25.364  INFO 18056 --- [main] vn.ndm.cleartrash.ClearTrashApplication  : Started ClearTrashApplication in 1.899 seconds (JVM running for 3.029)
