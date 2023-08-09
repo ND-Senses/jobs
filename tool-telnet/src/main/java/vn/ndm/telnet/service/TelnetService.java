@@ -2,6 +2,8 @@ package vn.ndm.telnet.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.net.telnet.TelnetClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -12,8 +14,13 @@ import java.io.IOException;
 @Slf4j
 @Service
 public class TelnetService {
-
+    private final ThreadPoolTaskExecutor taskExecutor;
     String path = "telnet/servers.txt";
+
+    @Autowired
+    public TelnetService(ThreadPoolTaskExecutor taskExecutor) {
+        this.taskExecutor = taskExecutor;
+    }
 
     @PostConstruct
     public void init() {
@@ -26,27 +33,28 @@ public class TelnetService {
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
                 String name = parts[0];
-                String host = parts[1];
-                int port = Integer.parseInt(parts[2]);
-                if (host.contains(" ")) {
-                    for (String h : host.split(" "))
-                        telnet(name, h, port);
-                    continue;
+                String[] ips = parts[1].split(" ");
+                String[] ports = parts[2].split(" ");
+                TelnetClient telnetClient = new TelnetClient();
+                for (int i = 0; i < ips.length; i++) {
+                    for (int j = 0; j < ports.length; j++) {
+                        int finalJ = j;
+                        int finalI = i;
+                        taskExecutor.execute(() -> {
+                            try{
+                                telnetClient.connect(ips[finalI], Integer.parseInt(ports[finalJ]));
+                                log.info("=====> {} Host {} port {} - Success", name, ips[finalI], ports[finalJ]);
+                            } catch (IOException e) {
+                                log.info("=====> {} Host {} port {} - Error {}", name, ips[finalI], ports[finalJ], e.getMessage());
+                            }
+                        });
+                    }
                 }
-                telnet(name, host, port);
             }
+            taskExecutor.shutdown();
         } catch (IOException e) {
             log.info("Error reading file: {}", e.getMessage());
-        }
-    }
-
-    private void telnet(String name, String host, int port) {
-        try{
-            TelnetClient telnetClient = new TelnetClient();
-            telnetClient.connect(host, port);
-            log.info("=====> {} Host {} port {} - Success", name, host, port);
-        } catch (IOException e) {
-            log.info("=====> {} Host {} port {} - Error {}", name, host, port,e.getMessage());
+            Thread.currentThread().interrupt();
         }
     }
 }
