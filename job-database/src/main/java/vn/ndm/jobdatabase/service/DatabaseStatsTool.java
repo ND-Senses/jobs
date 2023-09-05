@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 import vn.ndm.jobdatabase.constans.SQLConstants;
 import vn.ndm.jobdatabase.utils.FileUtils;
@@ -28,8 +29,8 @@ public class DatabaseStatsTool {
     private static final String SLASH = "/";
     private static final String EXPORT_DIR = "Excel/";
 
-    public DatabaseStatsTool(@Qualifier("eofficev2") List<DataSource> dataSourceMapVgo,
-                             @Qualifier("eoffice") List<DataSource> dataSourceMapVgc) {
+    public DatabaseStatsTool(@Qualifier("vgo") List<DataSource> dataSourceMapVgo,
+                             @Qualifier("vgc") List<DataSource> dataSourceMapVgc) {
         this.vgoDataSources = dataSourceMapVgo;
         this.vgcDataSources = dataSourceMapVgc;
     }
@@ -100,7 +101,7 @@ public class DatabaseStatsTool {
                 rowNum++;
             }
             workbook.write(outputStream);
-            System.out.println("Data has been written to Excel file successfully.");
+            log.info("Data has been written to Excel file successfully.");
         } catch (Exception e) {
             e.printStackTrace();
         }

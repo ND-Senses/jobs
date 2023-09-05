@@ -23,10 +23,8 @@ public class GenerateDataService {
     private static final String SLASH = "/";
     private static final String EXPORT_DIR = "Data/";
 
-    @Value("${detection.module.type}")
-    private String status;
-    @Value("${detection.module.table}")
-    private String tables;
+    @Value("#{'${detection.module.table}'.split(',')}")
+    private List<String> tables;
 
     public GenerateDataService(@Qualifier("vgo-cmdv_v3") List<DataSource> dataSourceMapVgo) {
         this.dataSourceMap = dataSourceMapVgo;
@@ -34,20 +32,21 @@ public class GenerateDataService {
 
     public List<String> getAllTableNames(DataSource db) {
         List<String> tableNames = new ArrayList<>();
-        if ("ALL".equals(status)) {
-            try (Connection connection = db.getConnection();
-                 PreparedStatement preparedStatement = connection.prepareStatement(SQLConstants.TABLE_V2.getValue())){
-                preparedStatement.setString(1, connection.getSchema());
-                ResultSet resultSet = preparedStatement.executeQuery();
-                while (resultSet.next()) {
-                    String tableName = resultSet.getString("table_name");
-                    tableNames.add(tableName.toUpperCase());
-                }
-            } catch (SQLException e) {
-                log.error("Error while getting all table names: {}", e.getMessage());
+        if (!tables.isEmpty()) {
+            log.info("Generate tables config");
+            return tables;
+        }
+        log.info("Generate all tables");
+        try (Connection connection = db.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SQLConstants.TABLE_V2.getValue())){
+            preparedStatement.setString(1, connection.getSchema());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String tableName = resultSet.getString("table_name");
+                tableNames.add(tableName.toUpperCase());
             }
-        }else{
-            tableNames = Arrays.asList(tables.split(","));
+        } catch (SQLException e) {
+            log.error("Error while getting all table names: {}", e.getMessage());
         }
         return tableNames;
     }

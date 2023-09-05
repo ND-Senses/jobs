@@ -2,6 +2,7 @@ package vn.ndm.jobdatabase.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 import vn.ndm.jobdatabase.constans.SQLConstants;
 import vn.ndm.jobdatabase.obj.DataBaseOBJ;
@@ -22,20 +23,25 @@ public class ExportDLLService {
     private static final String SLASH = "/";
     private static final String EXPORT_DIR = "DLL/";
     private final List<DataBaseOBJ> listConfig = new ArrayList<>();
+    private final ThreadPoolTaskExecutor taskExecutor;
 
-    public ExportDLLService(@Qualifier("eofficev2") List<DataSource> dataSourceMapVgo) {
+    public ExportDLLService(@Qualifier("vas-online") List<DataSource> dataSourceMapVgo, ThreadPoolTaskExecutor taskExecutor) {
         this.dataSourceMap = dataSourceMapVgo;
+        this.taskExecutor = taskExecutor;
     }
 
     public void processExport() {
         log.info("#processExport");
         setMapConfig();
         for (DataSource db : dataSourceMap) {
-            try (Connection conn = db.getConnection()){
-                listConfig.forEach(v -> exportObjectsToFile(conn, v.getColumn(), v.getSql(), v.getFolder()));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            taskExecutor.execute(() -> {
+                try (Connection conn = db.getConnection()){
+                    listConfig.forEach(v -> exportObjectsToFile(conn, v.getColumn(), v.getSql(), v.getFolder()));
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+            });
         }
     }
 
@@ -49,8 +55,8 @@ public class ExportDLLService {
         listConfig.add(new DataBaseOBJ("table_name", SQLConstants.TABLE.getValue(), "Table"));
         listConfig.add(new DataBaseOBJ("view_name", SQLConstants.VIEW.getValue(), "View"));
         listConfig.add(new DataBaseOBJ("index_name", SQLConstants.INDEX.getValue(), "Index"));
-        listConfig.add(new DataBaseOBJ("job_name", SQLConstants.JOB.getValue(), "Job"));
-        listConfig.add(new DataBaseOBJ("job", SQLConstants.DBMS_JOB.getValue(), "DBMS_Job"));
+//        listConfig.add(new DataBaseOBJ("job_name", SQLConstants.JOB.getValue(), "Job"));
+//        listConfig.add(new DataBaseOBJ("job", SQLConstants.DBMS_JOB.getValue(), "DBMS_Job"));
         listConfig.add(new DataBaseOBJ("queue_table", SQLConstants.QUEUE_TABLE.getValue(), "Queue_Table"));
         listConfig.add(new DataBaseOBJ("queue_name", SQLConstants.QUEUE.getValue(), "Queue"));
     }
@@ -75,5 +81,4 @@ public class ExportDLLService {
             log.info("Error export: {}", e.getMessage());
         }
     }
-
 }

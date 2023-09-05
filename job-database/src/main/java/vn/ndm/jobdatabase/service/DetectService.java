@@ -13,7 +13,7 @@ public class DetectService {
     private final ExportDLLService exportDLLService;
     private final GenerateDataService generateDataService;
     private final DatabaseStatsTool databaseStatsTool;
-    @Value("${detection.type-code}")
+    @Value("${detection.module.type-code}")
     private String type;
 
     @Autowired
@@ -26,7 +26,7 @@ public class DetectService {
 
     @PostConstruct
     public void init() {
-        log.info("#Init DetectService ");
+        log.info("#Init DetectService type: {}", type);
         if (type.equals("DLL"))
             exportDLLService.processExport();
         if (type.equals("DATA"))

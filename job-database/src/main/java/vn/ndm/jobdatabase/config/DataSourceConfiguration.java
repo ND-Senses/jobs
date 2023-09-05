@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ public class DataSourceConfiguration {
 
     public static final String ORACLE_JDBC_ORACLE_DRIVER = "oracle.jdbc.OracleDriver";
     public static final String COM_MYSQL_CJ_JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String URL_CLOUD = "jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=yes)(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.6)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.7)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=VSGDB)))";
+    private static final String URL_VAS_OLD = "jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.53)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.53)(PORT = 1521))(LOAD_BALANCE = yes)(FAILOVER = yes))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=vsgdb)(failover_mode=(type=session)(method=basic))))";
 
     @Bean
     public Map<String, DataSource> dataSourceMap() {
@@ -74,6 +77,16 @@ public class DataSourceConfiguration {
         return dataSourceBuilder.build();
     }
 
+    @Bean(value = "vas-online")
+    public DataSource vasOnline() {
+        DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
+        dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
+        dataSourceBuilder.url("jdbc:oracle:thin:@//10.252.10.221:1521/mpay");
+        dataSourceBuilder.username("admin_msocial_sg");
+        dataSourceBuilder.password("admin");
+        return dataSourceBuilder.build();
+    }
+
     @Bean(value = "eoffice")
     public DataSource eofficeVNPT() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
@@ -98,7 +111,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateOld() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.51)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.53)(PORT = 1521))(LOAD_BALANCE = yes)(FAILOVER = yes))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=vsgdb)(failover_mode=(type=session)(method=basic))))");
+        dataSourceBuilder.url(URL_VAS_OLD);
         dataSourceBuilder.username("admin_vg");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -108,7 +121,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateOld1() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.53)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.53)(PORT = 1521))(LOAD_BALANCE = yes)(FAILOVER = yes))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=vsgdb)(failover_mode=(type=session)(method=basic))))");
+        dataSourceBuilder.url(URL_VAS_OLD);
         dataSourceBuilder.username("cmdv_v3");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -118,7 +131,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateOld2() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.51)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.53)(PORT = 1521))(LOAD_BALANCE = yes)(FAILOVER = yes))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=vsgdb)(failover_mode=(type=session)(method=basic))))");
+        dataSourceBuilder.url(URL_VAS_OLD);
         dataSourceBuilder.username("quartz");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -128,7 +141,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateOld3() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.51)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.53)(PORT = 1521))(LOAD_BALANCE = yes)(FAILOVER = yes))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=vsgdb)(failover_mode=(type=session)(method=basic))))");
+        dataSourceBuilder.url(URL_VAS_OLD);
         dataSourceBuilder.username("csp_vg");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -138,7 +151,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateOld4() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.51)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.53)(PORT = 1521))(LOAD_BALANCE = yes)(FAILOVER = yes))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=vsgdb)(failover_mode=(type=session)(method=basic))))");
+        dataSourceBuilder.url(URL_VAS_OLD);
         dataSourceBuilder.username("cmdv_v2_new");
         dataSourceBuilder.password("cmdv");
         return dataSourceBuilder.build();
@@ -148,7 +161,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateOld5() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.51)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.53)(PORT = 1521))(LOAD_BALANCE = yes)(FAILOVER = yes))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=vsgdb)(failover_mode=(type=session)(method=basic))))");
+        dataSourceBuilder.url(URL_VAS_OLD);
         dataSourceBuilder.username("cmdv_sync");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -158,7 +171,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateOld6() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.51)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.54.9.53)(PORT = 1521))(LOAD_BALANCE = yes)(FAILOVER = yes))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=vsgdb)(failover_mode=(type=session)(method=basic))))");
+        dataSourceBuilder.url(URL_VAS_OLD);
         dataSourceBuilder.username("cmdv_sms");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -168,7 +181,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateCloud() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=yes)(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.6)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.7)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=VSGDB)))");
+        dataSourceBuilder.url(URL_CLOUD);
         dataSourceBuilder.username("admin_vg");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -178,7 +191,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateCloud1() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=yes)(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.6)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.7)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=VSGDB)))");
+        dataSourceBuilder.url(URL_CLOUD);
         dataSourceBuilder.username("cmdv_v3");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -188,7 +201,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateCloud2() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=yes)(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.6)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.7)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=VSGDB)))");
+        dataSourceBuilder.url(URL_CLOUD);
         dataSourceBuilder.username("quartz");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -198,7 +211,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateCloud3() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=yes)(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.6)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.7)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=VSGDB)))");
+        dataSourceBuilder.url(URL_CLOUD);
         dataSourceBuilder.username("csp_vg");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -208,7 +221,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateCloud4() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=yes)(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.6)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.7)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=VSGDB)))");
+        dataSourceBuilder.url(URL_CLOUD);
         dataSourceBuilder.username("cmdv_v2_new");
         dataSourceBuilder.password("cmdv");
         return dataSourceBuilder.build();
@@ -218,7 +231,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateCloud5() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=yes)(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.6)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.7)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=VSGDB)))");
+        dataSourceBuilder.url(URL_CLOUD);
         dataSourceBuilder.username("cmdv_sync");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
@@ -228,7 +241,7 @@ public class DataSourceConfiguration {
     public DataSource vasgateCloud6() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName(ORACLE_JDBC_ORACLE_DRIVER);
-        dataSourceBuilder.url("jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=yes)(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.6)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.186.7)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=VSGDB)))");
+        dataSourceBuilder.url(URL_CLOUD);
         dataSourceBuilder.username("cmdv_sms");
         dataSourceBuilder.password("a");
         return dataSourceBuilder.build();
