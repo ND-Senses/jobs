@@ -16,7 +16,7 @@ public class CleanService implements JobHandler {
 
     public void deleteRecursive(File path) {
         log.info("Cleaning out folder: {}", path.toString());
-        try {
+        try{
             File[] files = path.listFiles();
             if (files != null) {
                 for (File file : files) {
@@ -24,7 +24,7 @@ public class CleanService implements JobHandler {
                         deleteRecursive(file);
                         Path p = Paths.get(file.getPath());
                         log.info("Delete folder {} status: {}", p, Files.deleteIfExists(p));
-                    } else {
+                    }else{
                         Path p = Paths.get(file.getPath());
                         log.info("Delete file {} status: {}", p, Files.deleteIfExists(p));
                     }

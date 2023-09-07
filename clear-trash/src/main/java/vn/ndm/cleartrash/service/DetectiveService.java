@@ -5,9 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vn.ndm.cleartrash.itf.JobHandler;
 import vn.ndm.cleartrash.service.impl.CleanService;
-import vn.ndm.cleartrash.service.impl.CleanWithNameService;
-import vn.ndm.cleartrash.service.impl.DuplicateService;
-import vn.ndm.cleartrash.service.impl.FileSplitterService;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -17,27 +14,18 @@ import java.util.Map;
 @Slf4j
 @Service
 public class DetectiveService {
-    final DuplicateService duplicateService;
-    final FileSplitterService fileSplitterService;
     final CleanService cleanService;
-    final CleanWithNameService cleanWithNameService;
     private final Map<String, JobHandler> jobHandlers = new HashMap<>();
 
     @Autowired
-    public DetectiveService(DuplicateService duplicateService, FileSplitterService fileSplitterService, CleanService cleanService, CleanWithNameService cleanWithNameService) {
-        this.duplicateService = duplicateService;
-        this.fileSplitterService = fileSplitterService;
+    public DetectiveService(CleanService cleanService) {
         this.cleanService = cleanService;
-        this.cleanWithNameService = cleanWithNameService;
     }
 
     @PostConstruct
     public void initDetectiveService() {
         // Register job handlers
         jobHandlers.put("DELETE", cleanService);
-        jobHandlers.put("DUPLICATE", duplicateService);
-        jobHandlers.put("SPLITER", fileSplitterService);
-        jobHandlers.put("CLSC", cleanWithNameService);
         // Add more job handlers here...
     }
 
@@ -46,7 +34,7 @@ public class DetectiveService {
         JobHandler jobHandler = jobHandlers.get(cmd);
         if (jobHandler != null) {
             jobHandler.execute(params);
-        } else {
+        }else{
             log.info("Unsupported command: {}", cmd);
         }
     }

@@ -1,0 +1,11 @@
+job:
+  command: DELETE
+  clear-time: 0 0 6 * * ?
+  paths:
+    - C:/Windows/Temp
+    - C:/Users/admin/AppData/Local/Temp
+    - C:/Windows/Prefetch
+    - C:/Windows/Temp
+    - C:/Windows/Prefetch
+    - C:/Users/admin/AppData/Local/Temp
+    - C:/Windows/SoftwareDistribution/Download
