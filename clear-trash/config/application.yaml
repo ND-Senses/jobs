@@ -1,6 +1,6 @@
 job:
   command: DELETE
-  clear-time: 0 0 6 * * ?
+  clear-time: 0 */2 * ? * *
   paths:
     - C:/Windows/Temp
     - C:/Users/admin/AppData/Local/Temp

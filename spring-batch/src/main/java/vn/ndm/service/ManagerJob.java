@@ -31,7 +31,7 @@ public class ManagerJob {
     @PostConstruct
     public void setJobRegistry() throws DuplicateJobException {
         jobRegistry.register(exportDLL);
-        jobRegistry.register(generateData);
-        jobRegistry.register(statsTool);
+//        jobRegistry.register(generateData);
+//        jobRegistry.register(statsTool);
     }
 }

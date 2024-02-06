@@ -16,11 +16,15 @@
     </properties>
 
     <modules>
-        <module>spring-batch</module>
+        <module>import-data-prefix</module>
         <module>clear-trash</module>
+        <module>spring-batch</module>
         <module>job-database</module>
         <module>session-management</module>
         <module>tool-telnet</module>
+        <module>system-measurement</module>
+        <module>job-management</module>
+        <module>job-core</module>
     </modules>
 
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->

@@ -1,0 +1,65 @@
+2023-11-02 09:31:06.500  INFO 20220 --- [main] vn.ndm.cleartrash.ClearTrashApplication  : Starting ClearTrashApplication using Java 11.0.15.1 on VIRUS-BUG with PID 20220 (D:\example\jobs\clear-trash\target\classes started by admin in D:\example\jobs\clear-trash)
+2023-11-02 09:31:06.535  INFO 20220 --- [main] vn.ndm.cleartrash.ClearTrashApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-11-02 09:31:08.334  INFO 20220 --- [main] vn.ndm.cleartrash.ClearTrashApplication  : Started ClearTrashApplication in 2.577 seconds (JVM running for 4.83)
+2023-11-02 09:34:14.603  INFO 3232 --- [main] vn.ndm.cleartrash.ClearTrashApplication  : Starting ClearTrashApplication using Java 11.0.15.1 on VIRUS-BUG with PID 3232 (D:\example\jobs\clear-trash\target\classes started by admin in D:\example\jobs\clear-trash)
+2023-11-02 09:34:14.607  INFO 3232 --- [main] vn.ndm.cleartrash.ClearTrashApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-11-02 09:34:15.700  INFO 3232 --- [main] vn.ndm.cleartrash.ClearTrashApplication  : Started ClearTrashApplication in 1.514 seconds (JVM running for 2.71)
+2023-11-02 09:36:00.003  INFO 3232 --- [scheduling-1] v.n.cleartrash.service.DetectiveService  : jobHandlers: 1
+2023-11-02 09:36:00.006  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Temp
+2023-11-02 09:36:00.010  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\1d4e63f9-1dfc-40b5-a429-b1a6145af1bc.tmp status: true
+2023-11-02 09:36:00.010  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Temp\Microsoft
+2023-11-02 09:36:00.011  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Temp\Microsoft\Edge
+2023-11-02 09:36:00.012  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Temp\Microsoft\Edge\User Data
+2023-11-02 09:36:00.012  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Temp\Microsoft\Edge\User Data\Crashpad
+2023-11-02 09:36:00.012  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Temp\Microsoft\Edge\User Data\Crashpad\attachments
+2023-11-02 09:36:00.013  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete folder C:\Windows\Temp\Microsoft\Edge\User Data\Crashpad\attachments status: true
+2023-11-02 09:36:00.014  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Temp\Microsoft\Edge\User Data\Crashpad\reports
+2023-11-02 09:36:00.015  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete folder C:\Windows\Temp\Microsoft\Edge\User Data\Crashpad\reports status: true
+2023-11-02 09:36:00.016  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete folder C:\Windows\Temp\Microsoft\Edge\User Data\Crashpad status: true
+2023-11-02 09:36:00.016  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete folder C:\Windows\Temp\Microsoft\Edge\User Data status: true
+2023-11-02 09:36:00.017  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete folder C:\Windows\Temp\Microsoft\Edge status: true
+2023-11-02 09:36:00.017  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete folder C:\Windows\Temp\Microsoft status: true
+2023-11-02 09:36:00.018  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\Microsoft_.NET_Runtime_-_6.0.23_(x64)_20231026111701.log status: true
+2023-11-02 09:36:00.019  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\Microsoft_.NET_Runtime_-_6.0.23_(x64)_20231026111701_000_dotnet_hostfxr_6.0.23_win_x64.msi.log status: true
+2023-11-02 09:36:00.021  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\Microsoft_.NET_Runtime_-_6.0.23_(x64)_20231026111701_001_dotnet_runtime_6.0.23_win_x64.msi.log status: true
+2023-11-02 09:36:00.022  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\Microsoft_.NET_Runtime_-_6.0.24_(x64)_20231026111655.log status: true
+2023-11-02 09:36:00.023  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\Microsoft_.NET_Runtime_-_6.0.24_(x64)_20231026111655_000_dotnet_runtime_6.0.24_win_x64.msi.log status: true
+2023-11-02 09:36:00.024  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\Microsoft_.NET_Runtime_-_6.0.24_(x64)_20231026111655_001_dotnet_hostfxr_6.0.24_win_x64.msi.log status: true
+2023-11-02 09:36:00.025  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\Microsoft_.NET_Runtime_-_6.0.24_(x64)_20231026111655_002_dotnet_host_6.0.24_win_x64.msi.log status: true
+2023-11-02 09:36:00.027  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\MpCmdRun.log status: true
+2023-11-02 09:36:00.027  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\MpSigStub.log status: true
+2023-11-02 09:36:00.029  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Windows\Temp\msedge_installer.log status: true
+2023-11-02 09:36:00.029  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Temp\SDIAG_8c2f6758-b6b9-4b79-8ce8-843fbb12b7ae
+2023-11-02 09:36:00.031  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : #Error delete file: C:\Windows\Temp\SDIAG_8c2f6758-b6b9-4b79-8ce8-843fbb12b7ae
+2023-11-02 09:36:00.031  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Users\admin\AppData\Local\Temp
+2023-11-02 09:36:00.032  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\%%%1AC.tmp status: true
+2023-11-02 09:36:00.033  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+JXF10010414584118970100.tmp status: true
+2023-11-02 09:36:00.034  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF2198943829821193638.tmp status: true
+2023-11-02 09:36:00.034  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF2299196327950872152.tmp status: true
+2023-11-02 09:36:00.035  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF2451722686277356007.tmp status: true
+2023-11-02 09:36:00.036  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF3494048876066477659.tmp status: true
+2023-11-02 09:36:00.036  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF3496489311398582255.tmp status: true
+2023-11-02 09:36:00.037  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF3615131476035033448.tmp status: true
+2023-11-02 09:36:00.037  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF37823272676411989.tmp status: true
+2023-11-02 09:36:00.038  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF4001678506488961446.tmp status: true
+2023-11-02 09:36:00.039  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF4287722821670507273.tmp status: true
+2023-11-02 09:36:00.040  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF4967746298913372074.tmp status: true
+2023-11-02 09:36:00.041  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF5511328558664434241.tmp status: true
+2023-11-02 09:36:00.041  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF560350726136461572.tmp status: true
+2023-11-02 09:36:00.042  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF5765124281937759760.tmp status: true
+2023-11-02 09:36:00.042  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF7559349009327689216.tmp status: true
+2023-11-02 09:36:00.043  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\+~JF974961192246311208.tmp status: true
+2023-11-02 09:36:00.043  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\.ses status: true
+2023-11-02 09:36:00.044  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Delete file C:\Users\admin\AppData\Local\Temp\03235c87-d4fd-4913-9713-6920abd8e2e4.tmp.ico status: true
+2023-11-02 09:36:00.045  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : #Error delete file: C:\Users\admin\AppData\Local\Temp\035d0ef7-2e2b-4775-a100-e424bbe9711d.tmp: The process cannot access the file because it is being used by another process.
+
+2023-11-02 09:36:00.045  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Prefetch
+2023-11-02 09:36:00.045  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Temp
+2023-11-02 09:36:00.046  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Temp\SDIAG_8c2f6758-b6b9-4b79-8ce8-843fbb12b7ae
+2023-11-02 09:36:00.046  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : #Error delete file: C:\Windows\Temp\SDIAG_8c2f6758-b6b9-4b79-8ce8-843fbb12b7ae
+2023-11-02 09:36:00.046  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\Prefetch
+2023-11-02 09:36:00.047  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Users\admin\AppData\Local\Temp
+2023-11-02 09:36:00.047  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : #Error delete file: C:\Users\admin\AppData\Local\Temp\035d0ef7-2e2b-4775-a100-e424bbe9711d.tmp: The process cannot access the file because it is being used by another process.
+
+2023-11-02 09:36:00.047  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : Cleaning out folder: C:\Windows\SoftwareDistribution\Download
+2023-11-02 09:36:00.048  INFO 3232 --- [scheduling-1] v.n.c.service.impl.CleanService          : #Error delete file: C:\Windows\SoftwareDistribution\Download\47876127ff4f6c5382536522ddd1e640b41e1060

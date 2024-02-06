@@ -16,23 +16,23 @@ import vn.ndm.tasklet.export.ExportDLLService;
 @Configuration
 @EnableBatchProcessing
 public class ExportDLLImpl implements JobFactory {
-    private final ExportDLLService exportFile;
+    private final ExportDLLService exportDLLService;
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
     private final JobExecutionListener listener;
 
-    public ExportDLLImpl(ExportDLLService exportFile,
+    public ExportDLLImpl(ExportDLLService exportDLLService,
                          JobBuilderFactory jobBuilderFactory,
                          StepBuilderFactory stepBuilderFactory,
                          JobExecutionListener listener) {
-        this.exportFile = exportFile;
+        this.exportDLLService = exportDLLService;
         this.jobBuilderFactory = jobBuilderFactory;
         this.stepBuilderFactory = stepBuilderFactory;
         this.listener = listener;
     }
 
     @Bean
-    public Job jobExport() {
+    public Job jobExportDLLService() {
         return jobBuilderFactory.get(getJobName())
                 .listener(listener)
                 .start(step1()).build();
@@ -40,7 +40,7 @@ public class ExportDLLImpl implements JobFactory {
 
     @Override
     public Job createJob() {
-        return jobExport();
+        return jobExportDLLService();
     }
 
     @Override
@@ -50,9 +50,9 @@ public class ExportDLLImpl implements JobFactory {
 
     @Bean
     public Step step1() {
-        log.info("step1");
-        return stepBuilderFactory.get("step1")
-                .tasklet(exportFile)
+        log.info("step11");
+        return stepBuilderFactory.get("step11")
+                .tasklet(exportDLLService)
                 .build();
     }
 }

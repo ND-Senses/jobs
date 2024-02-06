@@ -8,7 +8,7 @@ import org.springframework.batch.core.configuration.JobRegistry;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.launch.JobOperator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -16,13 +16,15 @@ import java.util.Date;
 
 @Slf4j
 @Component
-@EnableScheduling
 public class ScheduleJob {
 
     private final JobLauncher jobLauncher;
     private final JobRegistry jobRegistry;
     @Autowired
     JobOperator jobOperator;
+
+    @Value("${detection.module.type-code}")
+    private String type;
 
     @Autowired
     public ScheduleJob(JobLauncher jobLauncher, JobRegistry jobRegistry) {

@@ -16,23 +16,23 @@ import vn.ndm.tasklet.info.DatabaseStatsTool;
 @Configuration
 @EnableBatchProcessing
 public class DatabaseStatsToolImpl implements JobFactory {
-    private final DatabaseStatsTool exportFile;
+    private final DatabaseStatsTool databaseStatsTool;
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
     private final JobExecutionListener listener;
 
-    public DatabaseStatsToolImpl(DatabaseStatsTool exportFile,
+    public DatabaseStatsToolImpl(DatabaseStatsTool databaseStatsTool,
                                  JobBuilderFactory jobBuilderFactory,
                                  StepBuilderFactory stepBuilderFactory,
                                  JobExecutionListener listener) {
-        this.exportFile = exportFile;
+        this.databaseStatsTool = databaseStatsTool;
         this.jobBuilderFactory = jobBuilderFactory;
         this.stepBuilderFactory = stepBuilderFactory;
         this.listener = listener;
     }
 
     @Bean
-    public Job jobExport() {
+    public Job jobDatabaseStatsTool() {
         return jobBuilderFactory.get(getJobName())
                 .listener(listener)
                 .start(step1()).build();
@@ -40,7 +40,7 @@ public class DatabaseStatsToolImpl implements JobFactory {
 
     @Override
     public Job createJob() {
-        return jobExport();
+        return jobDatabaseStatsTool();
     }
 
     @Override
@@ -50,9 +50,9 @@ public class DatabaseStatsToolImpl implements JobFactory {
 
     @Bean
     public Step step1() {
-        log.info("step1");
-        return stepBuilderFactory.get("step1")
-                .tasklet(exportFile)
+        log.info("step13");
+        return stepBuilderFactory.get("step13")
+                .tasklet(databaseStatsTool)
                 .build();
     }
 }

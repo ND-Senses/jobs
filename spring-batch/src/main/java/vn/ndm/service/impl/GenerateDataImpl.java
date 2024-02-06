@@ -16,23 +16,23 @@ import vn.ndm.tasklet.genarate.GenerateDataService;
 @Configuration
 @EnableBatchProcessing
 public class GenerateDataImpl implements JobFactory {
-    private final GenerateDataService exportFile;
+    private final GenerateDataService generateDataService;
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
     private final JobExecutionListener listener;
 
-    public GenerateDataImpl(GenerateDataService exportFile,
+    public GenerateDataImpl(GenerateDataService generateDataService,
                             JobBuilderFactory jobBuilderFactory,
                             StepBuilderFactory stepBuilderFactory,
                             JobExecutionListener listener) {
-        this.exportFile = exportFile;
+        this.generateDataService = generateDataService;
         this.jobBuilderFactory = jobBuilderFactory;
         this.stepBuilderFactory = stepBuilderFactory;
         this.listener = listener;
     }
 
     @Bean
-    public Job jobExport() {
+    public Job jobGenerateDataService() {
         return jobBuilderFactory.get(getJobName())
                 .listener(listener)
                 .start(step1()).build();
@@ -40,7 +40,7 @@ public class GenerateDataImpl implements JobFactory {
 
     @Override
     public Job createJob() {
-        return jobExport();
+        return jobGenerateDataService();
     }
 
     @Override
@@ -50,9 +50,9 @@ public class GenerateDataImpl implements JobFactory {
 
     @Bean
     public Step step1() {
-        log.info("step1");
-        return stepBuilderFactory.get("step1")
-                .tasklet(exportFile)
+        log.info("step12");
+        return stepBuilderFactory.get("step12")
+                .tasklet(generateDataService)
                 .build();
     }
 }
