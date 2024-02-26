@@ -52,7 +52,7 @@ public class TelnetService {
                 }
             }
         } catch (IOException e) {
-            log.info("Error reading file: {}", e.getMessage());
+            log.info("Error reading file:     {}", e.getMessage());
         }
     }
 }

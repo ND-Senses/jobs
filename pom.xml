@@ -16,7 +16,7 @@
     </properties>
 
     <modules>
-        <module>import-data-prefix</module>
+        <module>database-file-transfer</module>
         <module>clear-trash</module>
         <module>spring-batch</module>
         <module>job-database</module>
